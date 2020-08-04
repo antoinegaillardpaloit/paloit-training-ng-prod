@@ -1,0 +1,5 @@
+<p>{{ data.formation?.intitule }}</p>
+<p>{{ data.formation?.id }}</p>
+<div *ngFor="let session of data.formation?.prochainessessions">
+    {{ session.datedebut }}
+</div>
