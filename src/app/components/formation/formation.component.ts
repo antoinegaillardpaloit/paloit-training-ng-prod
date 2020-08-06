@@ -19,7 +19,7 @@ export class FormationComponent implements OnInit {
 
   constructor(private apollo: Apollo, private route: ActivatedRoute) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.queryFormation = this.apollo.watchQuery({
         query: FORMATION_QUERY,
         variables: {
@@ -29,11 +29,10 @@ export class FormationComponent implements OnInit {
         this.data = result.data;
         this.loading = result.loading;
         this.errors = result.errors;
-        console.log(result.data);
       });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.queryFormation.unsubscribe();
   }
 }

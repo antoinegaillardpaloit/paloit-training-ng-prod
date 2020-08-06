@@ -12,6 +12,7 @@ import { MapComponent } from './components/map/map.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardComponent } from './components/formations/card/card.component';
+import { DomainesComponent } from './components/formations/domaines/domaines.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CardComponent } from './components/formations/card/card.component';
     MapComponent,
     NavigationComponent,
     FooterComponent,
-    CardComponent
+    CardComponent,
+    DomainesComponent
   ],
   imports: [
     BrowserModule,

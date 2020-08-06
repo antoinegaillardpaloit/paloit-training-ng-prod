@@ -1,0 +1,76 @@
+/* Whole card */
+
+a, a:hover, p {
+    color: #666;
+    text-decoration: none;
+}
+
+div.uk-card {
+    border-radius: 12px;
+    background-color: #05CC98;
+    padding: 0;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Card tags */
+
+p.palo-card-tags {
+    position: absolute;
+    top: -30px;
+    left: 25px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* Card header */
+
+div.palo-card-header {
+    padding: 25px 30px;
+}
+
+div.palo-card-header h3 {
+    color: white;
+    font-size: 18px;
+    margin: 0;
+    margin-top: 5px;
+}
+
+div.palo-card-header p {
+    color: white;
+    margin: 30px;
+}
+
+/* Card body */
+
+div.palo-card-body {
+    background-color: white;
+    padding: 20px 25px;
+}
+
+.palo-card-body p {
+    font-size: 12px;
+}
+
+div.palo-card-body-info {
+    padding-left: 25px;
+}
+
+p.palo-card-body-prof {
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+p.palo-card-body-date {
+    margin: 15px 0;
+}
+
+p.palo-card-body-location {
+    margin: 0;
+    margin-top: 15px;
+}
+
+/* Card footer */
+
+div.uk-card-footer {
+    padding: 10px 0;
+}

@@ -1,1 +1,40 @@
-<p>card works!</p>
+<div class="uk-card">
+
+    <p class="palo-card-tags"><span uk-icon="icon: tag"></span> {{ domainesIntitules }}</p>
+
+    <a routerLink="/formations/{{id}}">
+
+        <div class="uk-card-header palo-card-header">
+            <h3 class="uk-card-title">{{ data.formation?.intitule }}</h3>
+            <ng-content></ng-content>
+        </div>
+
+        <div class="uk-card-body palo-card-body">
+            <div class="uk-flex-middle" uk-grid>
+
+                <div class="uk-width-auto">
+                    <img class="uk-border-circle" src="{{formateurPhotoUrl}}" width="100" height="100" alt="">
+                </div>
+
+                <div class="uk-width-expand palo-card-body-info">
+                    <p class="palo-card-body-prof"><span uk-icon="icon: user"></span> Avec {{ formateursNames }}</p>
+
+                    <p *ngIf="prochainesSessions.length > 0; else noDate" class="palo-card-body-date"><span uk-icon="icon: calendar"></span>
+                        {{ prochainesSessions[0]}}</p>
+
+                    <ng-template #noDate>
+                        <p class="palo-card-body-date"><span uk-icon="icon: calendar"></span> Nous contacter</p>
+                    </ng-template>
+
+                    <p class="palo-card-body-location"><span uk-icon="icon: location"></span> {{ lieu }}</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="uk-card-footer">
+        </div>
+
+    </a>
+
+</div>
