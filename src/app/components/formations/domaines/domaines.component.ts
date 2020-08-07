@@ -34,7 +34,7 @@ export class DomainesComponent implements OnInit {
       const allDomainesDataApi: any = result.data;
       
       // Filter results to get only the domaines that have at least one formation attached
-      allDomainesDataApi.domaines.forEach((domaine: { formations: any[]; }) => {
+      allDomainesDataApi.domaines.forEach((domaine) => {
         if (domaine.formations.length > 0) this.availableDomaines.push(domaine);
       });
 
@@ -44,7 +44,7 @@ export class DomainesComponent implements OnInit {
 
   }
 
-  onTagChoice(domaineId: string): void {
+  onTagChoice(domaineId: string, event): void {
 
     // Add the clicked domaine to selected domaines if not here yet, remove it if already there
     if (this.selectedDomaines.includes(domaineId)) {
@@ -54,12 +54,20 @@ export class DomainesComponent implements OnInit {
       this.selectedDomaines.push(domaineId);
     }
 
+    // Toggle the active styling on the clicked button
+    event.target.classList.toggle("palo-button-filter-active");
+
     // Inform formations component that the domaines selection has changed
     this.domaineUpdated.emit(this.selectedDomaines);
   }
 
-  onResetFilters(): void {
+  onResetFilters(event): void {
+    
+    // Empty selected domaines array and remove active styling on all tags
     this.selectedDomaines = [];
+    document.querySelectorAll('.palo-button-filter').forEach(button => button.classList.remove('palo-button-filter-active'));
+
+    // Inform formations component to display all formations again
     this.filtersReset.emit();
   }
 

@@ -1,2 +1,8 @@
-<button class="uk-button uk-button-default" (click)="onResetFilters()">Tous</button>
-<button *ngFor="let domaine of this.availableDomaines" class="uk-button uk-button-default" (click)="onTagChoice(domaine.id)">{{ domaine.intitule }}</button>
+<p>Filtrez par mots-clefs</p>
+
+<div>
+    <button *ngFor="let domaine of this.availableDomaines" class="palo-button palo-button-filter"
+        (click)="onTagChoice(domaine.id, $event)">{{ domaine.intitule.toUpperCase() }}</button>
+    <button class="palo-button palo-button-resetfilters" (click)="onResetFilters($event)">REINITIALISER LES
+        FILTRES</button>
+</div>
