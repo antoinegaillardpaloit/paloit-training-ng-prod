@@ -15,6 +15,8 @@ export class DomainesComponent implements OnInit {
   loading = true;
   errors: any;
 
+  availableDomaines: any[] = [];
+
   @Output() domaineUpdated = new EventEmitter<string>();
   @Output() filtersReset = new EventEmitter<void>();
 
@@ -23,23 +25,32 @@ export class DomainesComponent implements OnInit {
   constructor(private apollo: Apollo) { }
 
   ngOnInit(): void {
+
     this.queryDomaines = this.apollo.watchQuery({
       query: DOMAINES_QUERY
     }).valueChanges.subscribe(result => {
+
       this.data = result.data;
+      this.data.domaines.forEach((domaine: { formations: any[]; }) => {
+        if (domaine.formations.length > 0) {
+          this.availableDomaines.push(domaine);
+        }
+      });
+
       this.loading = result.loading;
       this.errors = result.errors;
     });
+
   }
 
   onTagChoice(domaineId: string): void {
     this.domaineUpdated.emit(domaineId);
   }
 
-  onResetFilters():void {
+  onResetFilters(): void {
     this.filtersReset.emit();
   }
-  
+
   ngOnDestroy(): void {
     this.queryDomaines.unsubscribe();
   }

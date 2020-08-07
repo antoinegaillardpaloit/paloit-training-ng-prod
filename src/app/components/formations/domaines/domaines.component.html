@@ -1,4 +1,4 @@
 <p>domaines works!</p>
 
 <button (click)="onResetFilters()">Tous</button>
-<p *ngFor="let domaine of this.data.domaines"><a (click)="onTagChoice(domaine.id)">{{ domaine.intitule }}</a></p>
+<p *ngFor="let domaine of this.availableDomaines"><a (click)="onTagChoice(domaine.id)">{{ domaine.intitule }}</a></p>

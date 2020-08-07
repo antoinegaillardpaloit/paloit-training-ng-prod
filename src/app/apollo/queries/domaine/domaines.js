@@ -5,6 +5,9 @@ const DOMAINES_QUERY = gql`
     domaines {
       id
       intitule
+      formations {
+        id
+      }
     }
   }
 `;
