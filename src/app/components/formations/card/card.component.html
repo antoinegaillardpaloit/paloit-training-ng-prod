@@ -2,10 +2,10 @@
 
     <p class="palo-card-tags"><span uk-icon="icon: tag"></span> {{ domainesIntitules }}</p>
 
-    <a routerLink="/formations/{{id}}">
+    <a routerLink="/formations/{{cardFormation.id}}">
 
         <div class="uk-card-header palo-card-header">
-            <h3 class="uk-card-title">{{ data.formation?.intitule }}</h3>
+            <h3 class="uk-card-title">{{ cardFormation.intitule }}</h3>
             <ng-content></ng-content>
         </div>
 

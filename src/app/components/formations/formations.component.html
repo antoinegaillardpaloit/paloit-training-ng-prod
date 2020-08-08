@@ -1,13 +1,13 @@
 <h1>Nos <span class="palo-title-highlight">formations</span></h1>
 
-<app-domaines (domaineUpdated)="filterFormations($event)" (filtersReset)="resetFilters()"></app-domaines>
+<app-domaines (domaineUpdated)="filterFormations($event)" (filtersReset)="resetFilters()" [availableDomaines]="this.availableDomaines"></app-domaines>
 
 <div class="palo-formations-grid" uk-grid>
 
     <div> <!-- Main section with formation cards -->
         <div class="uk-width-2-3">
             <div uk-grid>
-                <app-card *ngFor="let formation of formationsToDisplay" [id]="formation.id" class="uk-width-1-2@m">
+                <app-card *ngFor="let formationToDisplay of formationsToDisplay" [cardFormation]="formationToDisplay" class="uk-width-1-2@m">
                     <p>Oubliez ce que vous pensez savoir de Javascript et apprenez un langage Moderne (fonctionnalités avancées, nouveaux patterns, programmation fonctionnelle...).</p>
                 </app-card>
             </div>

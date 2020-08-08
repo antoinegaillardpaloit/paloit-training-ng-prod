@@ -1,7 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Apollo } from "apollo-angular";
-import CARD_QUERY from "src/app/apollo/queries/formation/card";
-import { Subscription } from "rxjs";
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -11,13 +8,9 @@ import { environment } from 'src/environments/environment';
 })
 export class CardComponent implements OnInit {
 
+  @Input() cardFormation: any;
+
   apiUrl: string = environment.apiUrl;
-
-  @Input() id: string;
-
-  data: any = {};
-  loading = true;
-  errors: any;
 
   formateursNames: string;
   formateurPhotoUrl: string;
@@ -25,30 +18,14 @@ export class CardComponent implements OnInit {
   prochainesSessions: string[] = [];
   lieu: string;
 
-  private queryCard: Subscription;
-
-  constructor(private apollo: Apollo) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.queryCard = this.apollo.watchQuery({
-      query: CARD_QUERY,
-      variables: {
-        id: this.id
-      }
-    }).valueChanges.subscribe(result => {
-      this.data = result.data;
-      this.loading = result.loading;
-      this.errors = result.errors;
-      this.formateursNames = this.formatEnumeration(this.data.formation?.formateurs, "nom", "et");
-      this.domainesIntitules = this.formatEnumeration(this.data.formation?.domaines, "intitule", "-");
-      this.prochainesSessions = this.formatDates(this.data.formation?.prochainessessions);
-      this.lieu = this.data.formation?.infospratiques.find(el => el.soustitre === "Lieu").info;
-      this.formateurPhotoUrl = this.apiUrl + this.data.formation?.formateurs[0].photo.formats.thumbnail.url;
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.queryCard.unsubscribe();
+    this.formateursNames = this.formatEnumeration(this.cardFormation.formateurs, "nom", "et");
+    this.domainesIntitules = this.formatEnumeration(this.cardFormation.domaines, "intitule", "-");
+    this.prochainesSessions = this.formatDates(this.cardFormation.prochainessessions);
+    this.lieu = this.cardFormation.infospratiques.find(el => el.soustitre === "Lieu").info;
+    this.formateurPhotoUrl = this.apiUrl + this.cardFormation.formateurs[0].photo.formats.thumbnail.url;
   }
 
   private formatEnumeration(inputArray: any[], wantedProperty: string, separator: string): string {
