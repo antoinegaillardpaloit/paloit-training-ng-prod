@@ -7,7 +7,7 @@
     <div> <!-- Main section with formation cards -->
         <div class="uk-width-2-3">
             <div uk-grid>
-                <app-card *ngFor="let formationToDisplay of formationsToDisplay" [cardFormation]="formationToDisplay" class="uk-width-1-2@m">
+                <app-card @cardShuffle *ngFor="let formationToDisplay of formationsToDisplay" [cardFormation]="formationToDisplay" class="uk-width-1-2@m">
                     <p>Oubliez ce que vous pensez savoir de Javascript et apprenez un langage Moderne (fonctionnalités avancées, nouveaux patterns, programmation fonctionnelle...).</p>
                 </app-card>
             </div>

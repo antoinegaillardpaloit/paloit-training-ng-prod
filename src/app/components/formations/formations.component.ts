@@ -1,25 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
-import { trigger, state, transition, style, animate } from '@angular/animations';
-
 import { Apollo } from "apollo-angular";
+import { Subscription } from "rxjs";
+
 import DOMAINES_QUERY from 'src/app/apollo/queries/domaine/domaines'
 import FORMATIONS_QUERY from "src/app/apollo/queries/formation/formations";
-import { Subscription } from "rxjs";
+
+import { cardShuffle } from '../../animations'
 
 @Component({
   selector: 'app-formations',
   templateUrl: './formations.component.html',
   styleUrls: ['./formations.component.css'],
   animations: [
-    trigger('fade', [
-
-      state('void', style({ opacity: 0 })),
-
-      transition(':enter, :leave', [
-        animate(2000)
-      ])
-    ])
+    cardShuffle
   ]
 })
 export class FormationsComponent implements OnInit {
@@ -37,6 +31,7 @@ export class FormationsComponent implements OnInit {
   constructor(private apollo: Apollo) { }
 
   ngOnInit(): void {
+
     // API call to get domaines
     this.getDomaines()
 
@@ -52,35 +47,37 @@ export class FormationsComponent implements OnInit {
   filterFormations(selectedDomainesIds: string[]): void {
 
     // Determines which formations to display based on user choice
-
     if (selectedDomainesIds.length < 1) {
-      
-      // If no domaine is selected, then display all formations
-      this.formationsToDisplay = this.allformations;
+
+      // If no domaine is selected, then display all formations (= reset filters)
+      this.resetFilters();
 
     } else {
-      
-      // If one or more domaines are selected, first reset formations to display
-      this.formationsToDisplay = [];
 
-      // Then extract formations from domaines whose ids are passed as parameter
+      // If one or more domaines are selected, extract formations from domaines whose ids are passed as parameter
+      let formationsRequested: any[] = [];
+
       this.availableDomaines.forEach(availableDomaine => {
-        if (selectedDomainesIds.includes(availableDomaine.id)) {
-          this.formationsToDisplay.push(...availableDomaine.formations)
-        }
+        if (selectedDomainesIds.includes(availableDomaine.id)) formationsRequested.push(...availableDomaine.formations);
       });
 
       // As a same formation can be referenced by different domaines, we need to filter the result for uniqueness by id
-      this.formationsToDisplay = [...new Map(this.formationsToDisplay.map(formation => [formation["id"], formation])).values()];
+      formationsRequested = [...new Map(formationsRequested.map(formation => [formation["id"], formation])).values()];
+      
+      // In formations already displayed, remove those that are not part of the new request
+      this.formationsToDisplay = this.formationsToDisplay.filter(ftd => formationsRequested.some(fr => ftd.id === fr.id));
+
+      // In formations already displayed, add those from the new request that are not already in there
+      this.addFormationsToDisplay(formationsRequested);
     }
   }
 
   resetFilters(): void {
-    this.formationsToDisplay = this.allformations;
+    this.addFormationsToDisplay(this.allformations);
   }
 
   private getDomaines() {
-    
+
     // Get all domaines from API
     this.queryDomaines = this.apollo.watchQuery({
       query: DOMAINES_QUERY
@@ -113,11 +110,17 @@ export class FormationsComponent implements OnInit {
       this.allformations = allFormationsDataApi.formations;
 
       // Initialize formations to display with all formations
-      this.formationsToDisplay = this.allformations;
+      this.formationsToDisplay = this.allformations.slice();
 
       this.loading = result.loading;
       this.errors = result.errors;
     });
+  }
+
+  private addFormationsToDisplay(requestedFormations: any[]) {
+    requestedFormations.forEach(requestedFormation => {
+      if(!this.formationsToDisplay.map(ftd => ftd.id).includes(requestedFormation.id)) this.formationsToDisplay.push(requestedFormation);
+    })
   }
 
 }
