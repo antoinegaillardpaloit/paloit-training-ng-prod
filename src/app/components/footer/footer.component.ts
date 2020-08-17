@@ -10,15 +10,17 @@ import { Subscription } from "rxjs";
 })
 export class FooterComponent implements OnInit {
 
-  // coordonnees: any = {};
-
   data: any = {};
   loading = true;
   errors: any;
 
+  // These properties are used to complete the markdown parsing in the componenent template, via the replace() js function. ngx-markdown seems to render \n as a space instead of a line break.
+  mdLinebreak = /\n/g;
+  htmlLinebreak: string = '<br>';
+
   private queryContact: Subscription;
 
-  constructor(private apollo: Apollo) {}
+  constructor(private apollo: Apollo) { }
 
   ngOnInit(): void {
     this.queryContact = this.apollo.watchQuery({

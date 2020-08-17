@@ -1,24 +1,18 @@
 <footer>
-    <div class="container footer-wrapper">
+    <div class="uk-container">
+        <div class="uk-child-width-expand@s uk-flex-middle footer-wrapper" uk-grid>
 
-        <div class="row">
-
-            <div class="col">
+            <div>
                 <img src="assets/images/white_logo.svg" class="d-inline-block align-top palo-logo" alt="">
-
-                <markdown ngPreserveWhitespaces>{{ data.coordonnee?.adresse }}</markdown>
-
-                
-
-                <p>{{ data.coordonnee?.adresse }}</p>
+                <p markdown ngPreserveWhitespaces>
+                    {{ data.coordonnee.adresse.replace(this.mdLinebreak, this.htmlLinebreak) }}
+                </p>
             </div>
 
-            <div class="col">
-                <!-- <app-map></app-map> -->
+            <div>
+                <app-map></app-map>
             </div>
-
 
         </div>
-
     </div>
 </footer>

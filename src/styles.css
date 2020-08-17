@@ -1,5 +1,6 @@
 @import "../node_modules/uikit/dist/css/uikit.min.css";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+@import "~leaflet/dist/leaflet.css";
 
 /** TEMP because of using ng-content until abstract is integrated in formation CT **/ 
 
@@ -11,6 +12,11 @@ div.palo-card-header p {
 }
 
 /*********** Text font ***********/
+
+@font-face {
+    font-family: bernadette;
+    src: url(assets/fonts/bernadette.otf) format("opentype");
+}
 
 html, body {
     font-family: 'Montserrat', sans-serif;
@@ -55,14 +61,28 @@ div.palo-container {
     outline: none;
 }
 
+/** Navbar button */
+
+.palo-button-navbar {
+    background: rgba(5, 204, 152, 1);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 1rem 2rem;
+    margin: 0 15px;
+}
+
 /** Filter buttons */
 
 .palo-button-filter {
-    background: rgba(5, 204, 152, 0.5)
+    background: rgba(5, 204, 152, 0.5);
 }
 
 .palo-button-filter-active {
-    background: rgba(5, 204, 152, 1)
+    background: rgba(5, 204, 152, 1);
 }
 
 .palo-button-resetfilters {

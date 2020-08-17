@@ -4,6 +4,10 @@ const ACCUEIL_QUERY = gql`
   query Accueil {
     accueil {
       accroche
+      chapeau
+      premierparagraphe
+      secondparagraphe
+      conclusion
     }
   }
 `;

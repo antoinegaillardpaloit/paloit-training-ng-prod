@@ -4,8 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GraphQLModule } from './graphql.module';
-import { HttpClientModule } from '@angular/common/http';
 
 import { FormationsComponent } from './components/formations/formations.component';
 import { FormationComponent } from './components/formation/formation.component';
@@ -16,7 +14,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CardComponent } from './components/formations/card/card.component';
 import { DomainesComponent } from './components/formations/domaines/domaines.component';
 
-import { MarkdownModule } from "ngx-markdown";
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
+
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
