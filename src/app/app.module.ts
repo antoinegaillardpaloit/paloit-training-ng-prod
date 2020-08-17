@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
+
 import { FormationsComponent } from './components/formations/formations.component';
 import { FormationComponent } from './components/formation/formation.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
@@ -14,6 +15,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { CardComponent } from './components/formations/card/card.component';
 import { DomainesComponent } from './components/formations/domaines/domaines.component';
+
+import { MarkdownModule } from "ngx-markdown";
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { DomainesComponent } from './components/formations/domaines/domaines.com
     DomainesComponent
   ],
   imports: [
+    MarkdownModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

@@ -1,0 +1,16 @@
+footer {
+    background-color: #05CC98;
+    box-shadow: inset 0 6px 16px -12px rgba(0,0,0,0.5);
+}
+
+p {
+    color: white;
+}
+
+img.palo-logo {
+    height: 2.5em;
+}
+
+.footer-wrapper {
+    padding: 3em;
+}

@@ -1,1 +1,24 @@
-<p>footer works!</p>
+<footer>
+    <div class="container footer-wrapper">
+
+        <div class="row">
+
+            <div class="col">
+                <img src="assets/images/white_logo.svg" class="d-inline-block align-top palo-logo" alt="">
+
+                <markdown ngPreserveWhitespaces>{{ data.coordonnee?.adresse }}</markdown>
+
+                
+
+                <p>{{ data.coordonnee?.adresse }}</p>
+            </div>
+
+            <div class="col">
+                <!-- <app-map></app-map> -->
+            </div>
+
+
+        </div>
+
+    </div>
+</footer>
