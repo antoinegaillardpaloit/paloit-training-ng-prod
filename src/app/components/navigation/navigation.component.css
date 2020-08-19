@@ -4,16 +4,96 @@
     color: #05CC98;
 }
 
-.palo-navbar-container {
-    padding: 0 2%;
+img.palo-nav-logo {
+    margin-top: 3px;
+}
+
+.palo-navbar {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
-.uk-navbar-nav a {
+a.palo-nav-link {
     color: #706F67;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1.3px;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 12px;
+}
+
+/** Button */
+
+.palo-button-navbar {
+    background: rgba(5, 204, 152, 1);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 1rem 2rem;
+    margin: 0.25rem 0.5rem;
+}
+
+/* Animated toggler button when menu is collapsable on smaller viewport */
+
+.palo-nav-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: 0;
+}
+
+.navbar-toggler span {
+   display: block;
+   background-color: rgba(0,0,0,.5);
+   height: 2px;
+   width: 25px;
+   margin-top: 4px;
+   margin-bottom: 4px;
+   -webkit-transform: rotate(0deg);
+   -moz-transform: rotate(0deg);
+   -o-transform: rotate(0deg);
+   transform: rotate(0deg);
+   position: relative;
+   left: 0;
+   opacity: 1;
+}
+
+.navbar-toggler span:nth-child(1),
+.navbar-toggler span:nth-child(3) {
+   -webkit-transition: transform .35s ease-in-out;
+   -moz-transition: transform .35s ease-in-out;
+   -o-transition: transform .35s ease-in-out;
+   transition: transform .35s ease-in-out;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+    opacity: 0.9;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+    height: 12px;
+    visibility: hidden;
+    background-color: transparent;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    opacity: 0.9;
 }

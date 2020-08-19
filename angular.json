@@ -27,9 +27,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/uikit/dist/js/uikit.min.js",
-              "node_modules/uikit/dist/js/uikit-icons.min.js",
-              "node_modules/marked/lib/marked.js"
+              "./node_modules/jquery/dist/jquery.slim.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           },
           "configurations": {
@@ -123,6 +122,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "frontend2"
 }

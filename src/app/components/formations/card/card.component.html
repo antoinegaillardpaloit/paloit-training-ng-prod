@@ -1,38 +1,84 @@
-<div class="uk-card">
+<div class="card palo-card">
 
-    <p class="palo-card-tags"><span uk-icon="icon: tag"></span> {{ domainesIntitules }}</p>
+    <p class="palo-card-tags">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="palo-card-icon" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M3 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 7.586 1H3zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+            <path
+                d="M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z" />
+        </svg>
+        {{ domainesIntitules }}
+    </p>
 
     <a routerLink="/formations/{{cardFormation.id}}">
 
-        <div class="uk-card-header palo-card-header">
-            <h3 class="uk-card-title">{{ cardFormation.intitule }}</h3>
-            <ng-content></ng-content>
-        </div>
+        <div class="card-body palo-card-body">
 
-        <div class="uk-card-body palo-card-body">
-            <div class="uk-flex-middle" uk-grid>
+            <div class="palo-card-header">
+                <h3 class="card-title">{{ cardFormation.intitule }}</h3>
+                <ng-content></ng-content>
+            </div>
 
-                <div class="uk-width-auto">
-                    <img class="uk-border-circle" src="{{formateurPhotoUrl}}" width="100" height="100" alt="">
+            <div class="row palo-card-content">
+
+                <div class="col-3 palo-card-avatar-container">
+                    <img class="palo-avatar-round palo-avatar-card" src="{{formateurPhotoUrl}}" width="100" height="100"
+                        alt="">
                 </div>
 
-                <div class="uk-width-expand palo-card-body-info">
-                    <p class="palo-card-body-prof"><span uk-icon="icon: user"></span> Avec {{ formateursNames }}</p>
+                <div class="col-9 palo-card-info">
 
-                    <p *ngIf="prochainesSessions.length > 0; else noDate" class="palo-card-body-date"><span uk-icon="icon: calendar"></span>
-                        {{ prochainesSessions[0]}}</p>
+                    <p class="card-text palo-card-content-prof">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="palo-card-icon" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                        Avec {{ formateursNames }}
+                    </p>
+
+                    <p *ngIf="prochainesSessions.length > 0; else noDate" class="palo-card-content-date">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="palo-card-icon" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                            <path fill-rule="evenodd"
+                                d="M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1zm1-3a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z" />
+                            <path fill-rule="evenodd"
+                                d="M3.5 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zm9 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5z" />
+                        </svg>
+                        {{ prochainesSessions[0]}}
+                    </p>
 
                     <ng-template #noDate>
-                        <p class="palo-card-body-date"><span uk-icon="icon: calendar"></span> Nous contacter</p>
+                        <p class="palo-card-content-date">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="palo-card-icon" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M5.5 9.5A.5.5 0 0 1 6 9h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z" />
+                                <path fill-rule="evenodd"
+                                    d="M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1zm1-3a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z" />
+                                <path fill-rule="evenodd"
+                                    d="M3.5 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zm9 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5z" />
+                            </svg>
+                            Nous contacter
+                        </p>
                     </ng-template>
 
-                    <p class="palo-card-body-location"><span uk-icon="icon: location"></span> {{ lieu }}</p>
+                    <p class="palo-card-content-location">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="palo-card-icon" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        </svg>
+                        {{ lieu }}
+                    </p>
+
                 </div>
 
             </div>
-        </div>
 
-        <div class="uk-card-footer">
         </div>
 
     </a>

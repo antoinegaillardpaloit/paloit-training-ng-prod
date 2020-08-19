@@ -1,3 +1,17 @@
 div.palo-formations-grid {
-    margin-top: 50px;;
+    margin-top: 50px;
+}
+
+div.palo-formations-drawing {
+    display: none;
+    background-image: url("/assets/images/online_information.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media (min-width: 992px) {
+    
+    div.palo-formations-drawing {
+        display: block;
+    }
 }

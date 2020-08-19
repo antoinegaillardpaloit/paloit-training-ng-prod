@@ -1,18 +1,22 @@
 <footer>
-    <div class="uk-container">
-        <div class="uk-child-width-expand@s uk-flex-middle footer-wrapper" uk-grid>
+    <div class="container">
 
-            <div>
-                <img src="assets/images/white_logo.svg" class="d-inline-block align-top palo-logo" alt="">
-                <p markdown ngPreserveWhitespaces>
-                    {{ data.coordonnee.adresse.replace(this.mdLinebreak, this.htmlLinebreak) }}
-                </p>
+        <div class="row palo-footer-wrapper">
+
+            <div class="col-md palo-footer-contact-wrapper">
+                <div class ="palo-footer-contact">
+                    <img src="assets/images/white_logo.svg" class="d-inline-block align-top palo-footer-logo" alt="">
+                    <p markdown ngPreserveWhitespaces>
+                        {{ data.coordonnee.adresse.replace(this.mdLinebreak, this.htmlLinebreak) }}
+                    </p>
+                </div>
             </div>
 
-            <div>
+            <div class="col-md">
                 <app-map></app-map>
             </div>
 
         </div>
+
     </div>
 </footer>

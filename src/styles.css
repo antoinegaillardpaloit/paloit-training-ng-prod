@@ -1,6 +1,7 @@
-@import "../node_modules/uikit/dist/css/uikit.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 @import "~leaflet/dist/leaflet.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
 
 /** TEMP because of using ng-content until abstract is integrated in formation CT **/ 
 
@@ -10,6 +11,7 @@ div.palo-card-header p {
     margin-top: 10px;
     font-size: 14px;
 }
+
 
 /*********** Text font ***********/
 
@@ -22,10 +24,11 @@ html, body {
     font-family: 'Montserrat', sans-serif;
 }
 
-.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
+
 
 /*********** Layout ***********/
 
@@ -33,15 +36,15 @@ div.palo-container {
     margin-top: 2%;
 }
 
+
 /*********** Headings ***********/
 
 .palo-title-highlight {
     color: #05CC98;
 }
 
-/*********** Buttons ***********/
 
-/** Override default button style */
+/*********** Buttons ***********/
 
 .palo-button {
     border: 0;
@@ -61,34 +64,9 @@ div.palo-container {
     outline: none;
 }
 
-/** Navbar button */
 
-.palo-button-navbar {
-    background: rgba(5, 204, 152, 1);
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 1.3px;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 12px;
-    padding: 1rem 2rem;
-    margin: 0 15px;
-}
+/*********** Images ***********/
 
-/** Filter buttons */
-
-.palo-button-filter {
-    background: rgba(5, 204, 152, 0.5);
-}
-
-.palo-button-filter-active {
-    background: rgba(5, 204, 152, 1);
-}
-
-.palo-button-resetfilters {
-    background: white;
-    font-weight: bold;
-    color: rgba(5, 204, 152, 1);
-    border: 1px solid rgba(5, 204, 152, 1);
-    box-sizing: border-box;
+img.palo-avatar-round {
+    border-radius: 50%;
 }

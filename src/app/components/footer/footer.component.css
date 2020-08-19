@@ -8,10 +8,24 @@ p {
     font-size: 18px;
 }
 
-img.palo-logo {
+img.palo-footer-logo {
     height: 2.5em;
+    margin-bottom: 12px;
 }
 
-.footer-wrapper {
-    padding: 3em 5em;
+.palo-footer-wrapper {
+    padding: 3em 0;
+}
+
+.palo-footer-contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .palo-footer-contact {
+        text-align: center;
+    }
 }

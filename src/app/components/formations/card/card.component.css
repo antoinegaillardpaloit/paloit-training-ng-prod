@@ -5,11 +5,16 @@ a, a:hover, p {
     text-decoration: none;
 }
 
-div.uk-card {
+div.palo-card {
     border-radius: 12px;
     background-color: #05CC98;
     padding: 0;
     box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.25);
+    border: none;
+}
+
+div.palo-card-body {
+    padding: 0 0 1.25rem 0;
 }
 
 /* Card tags */
@@ -40,37 +45,103 @@ div.palo-card-header p {
     margin: 30px;
 }
 
-/* Card body */
+/* Card centent */
 
-div.palo-card-body {
+
+/************* Managing 2 card versions *********/
+
+/* bp(s) = breakpoint(s) 
+
+/* Regarding the cards layout, there are 4 different situations (i.e. 3 bps).
+The main bp is md / 768px : thats's where we get from 1 card (col) per row to 2 cards (cols) per row,
+thanks to the class="col-md-6" given to the app-card component.
+
+On each side of this bp, we define another bp (so 3 bps in total), which controls the card version displayed.
+When individual cols get large enough in either situation, we switch from narrow version to large version.
+
+The default / mobile first / starter version is below. This is the narrow version. */
+
+div.palo-card-content {
     background-color: white;
     padding: 20px 25px;
+    margin: 0;
+    position: relative;
+    justify-content: center;
 }
 
-.palo-card-body p {
+div.palo-card-avatar-container {
+    position: absolute;
+    height: 100%;
+    top: -50%;
+    justify-content: center;
+    display: flex;
+}
+
+div.palo-card-info {
+    flex: 0 0 100%;
+    max-width: none;
+}
+
+/* And here is the large version */
+
+@media (min-width: 480px) and (max-width: 768px) {
+    
+    div.palo-card-content {
+        /* background-color: white;
+        padding: 20px 25px;
+        margin: 0;
+        position: relative; */
+        justify-content: unset;
+    }
+
+    div.palo-card-avatar-container {
+        position: relative;
+        /* height: 100%; */
+        /* top: -50%; */
+        width: auto;
+        /* justify-content: center; */
+        display: block;
+    }
+
+    div.palo-card-info {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+}
+
+/**************************************************/
+
+
+
+
+
+.palo-card-content p {
     font-size: 12px;
 }
 
-div.palo-card-body-info {
+div.palo-card-content-info {
     padding-left: 25px;
 }
 
-p.palo-card-body-prof {
+p.palo-card-content-prof {
     margin: 0;
     margin-bottom: 15px;
 }
 
-p.palo-card-body-date {
+p.palo-card-content-date {
     margin: 15px 0;
 }
 
-p.palo-card-body-location {
+p.palo-card-content-location {
     margin: 0;
     margin-top: 15px;
 }
 
-/* Card footer */
+.palo-card-icon {
+    font-size: 18px;
+    margin: -4px 4px 0 0;
+}
 
-div.uk-card-footer {
-    padding: 10px 0;
+img.palo-avatar-card {
+    margin: auto;
 }
