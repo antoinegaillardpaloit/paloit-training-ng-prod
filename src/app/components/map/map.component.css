@@ -11,3 +11,9 @@
 #map {
     height: 100%;
 }
+
+@media (max-width: 768px) {
+    .map-container {
+        padding: 30px;
+    }
+}

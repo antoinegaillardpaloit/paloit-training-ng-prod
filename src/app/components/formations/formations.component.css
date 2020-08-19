@@ -1,17 +1,50 @@
+div.palo-formations-row {
+    margin: 0;
+}
+
 div.palo-formations-grid {
-    margin-top: 50px;
+    margin-top: 62px;
+}
+
+/* Management of spacing around cards, with 2 breakpoints.
+The first bp only deals with paddings, while the second bp
+also manages the apparation of the drawing */
+
+h1,
+div.palo-formations-wrapper {
+    padding: 0 14px;
+}
+
+.palo-card-wrapper {
+    padding: 0;
+    margin-bottom: 62px;
 }
 
 div.palo-formations-drawing {
     display: none;
-    background-image: url("/assets/images/online_information.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
+}
+
+@media (min-width: 768px) {
+    
+    h1,
+    div.palo-formations-wrapper {
+        padding: 0;
+    }
+
+    .palo-card-wrapper {
+        padding: 0 30px 0 0;
+    }
 }
 
 @media (min-width: 992px) {
-    
+
+    h1,
+    div.palo-formations-wrapper {
+        padding: 0 14px;
+    }
+
     div.palo-formations-drawing {
         display: block;
+        margin-top: 50px;
     }
 }

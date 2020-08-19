@@ -2,6 +2,7 @@
 
 .palo-button-filter {
     background: rgba(5, 204, 152, 0.5);
+    
 }
 
 .palo-button-filter-active {
@@ -15,3 +16,10 @@
     border: 1px solid rgba(5, 204, 152, 1);
     box-sizing: border-box;
 }
+
+.palo-button-filter,
+.palo-button-resetfilters {
+    margin-left: 0;
+    margin-right: 0.5rem;
+}
+

@@ -1,0 +1,24 @@
+/* Layout */
+
+.palo-container {
+    margin-top: 48px;
+}
+
+@media (max-width: 768px) {
+    
+    .palo-container {
+        margin-top: 32px;
+    }
+}
+
+/* To make the footer sticky */
+
+:host {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+}
+
+.palo-site-content {
+    flex: 1;
+}
