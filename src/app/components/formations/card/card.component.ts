@@ -24,8 +24,9 @@ export class CardComponent implements OnInit {
     this.formateursNames = this.formatEnumeration(this.cardFormation.formateurs, "nom", "et");
     this.domainesIntitules = this.formatEnumeration(this.cardFormation.domaines, "intitule", "-");
     this.prochainesSessions = this.formatDates(this.cardFormation.prochainessessions);
-    this.lieu = this.cardFormation.infospratiques.find(el => el.soustitre === "Lieu").info;
+    this.lieu = this.cardFormation.lieus[0].nom;
     this.formateurPhotoUrl = this.apiUrl + this.cardFormation.formateurs[0].photo.formats.thumbnail.url;
+    console.log(this.cardFormation.formateurs[0].photo.formats.thumbnail.url);
   }
 
   private formatEnumeration(inputArray: any[], wantedProperty: string, separator: string): string {
