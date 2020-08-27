@@ -3,16 +3,6 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 
-/** TEMP because of using ng-content until abstract is integrated in formation CT **/ 
-
-div.palo-card-header p {
-    color: white;
-    margin: 0;
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-
 /*********** Fonts ***********/
 
 @font-face {
