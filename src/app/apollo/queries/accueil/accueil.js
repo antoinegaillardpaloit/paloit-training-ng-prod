@@ -5,8 +5,9 @@ const ACCUEIL_QUERY = gql`
     accueil {
       accroche
       chapeau
-      premierparagraphe
-      secondparagraphe
+      paragrapheaccueil {
+        paragraphe
+      }
       conclusion
     }
   }

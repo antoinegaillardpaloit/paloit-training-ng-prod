@@ -5,14 +5,23 @@ const FORMATIONS_QUERY = gql`
     formations {
       id
       intitule
-      prochainessessions {
+      lieus {
         id
-        datedebut
-        datefin
+        nom
+        adresse
       }
-      infospratiques {
+      accroche
+      presentation {
+        soustitre
+        paragraphe
+      }
+      infos {
         soustitre
         info
+      }
+      prochainessessions {
+        datedebut
+        datefin
       }
       domaines {
         id

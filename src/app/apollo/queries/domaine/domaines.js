@@ -8,12 +8,17 @@ const DOMAINES_QUERY = gql`
       formations {
         id
         intitule
+        lieus {
+          id
+          nom
+          adresse
+        }
         prochainessessions {
           id
           datedebut
           datefin
         }
-        infospratiques {
+        infos {
           soustitre
           info
         }
