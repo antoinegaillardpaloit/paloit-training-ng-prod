@@ -13,18 +13,26 @@
 html, body {
     font-family: 'Montserrat', sans-serif;
     height: 100%;
+    color: rgba(0, 0, 0, 0.8);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+p {
+    color: rgba(0, 0, 0, 0.8);
 }
 
 
 /*********** Headings ***********/
 
 .palo-title-highlight {
-    color: #05CC98;
+    color: transparent;
+    background-image: linear-gradient(to top, rgb(5, 204, 152), rgb(5, 240, 161));
+    background-clip: text;
 }
 
 
