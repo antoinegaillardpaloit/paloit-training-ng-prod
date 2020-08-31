@@ -27,6 +27,20 @@ p {
 }
 
 
+/*********** Layout ***********/
+
+.palo-container {
+    margin-top: 48px;
+}
+
+@media (max-width: 768px) {
+    
+    .palo-container {
+        margin-top: 32px;
+    }
+}
+
+
 /*********** Headings ***********/
 
 .palo-title-highlight {

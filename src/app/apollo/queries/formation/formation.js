@@ -5,10 +5,38 @@ const FORMATION_QUERY = gql`
     formation(id: $id) {
       id
       intitule
+      domaines {
+        intitule
+      }
+      presentation {
+        soustitre
+        paragraphe
+      }
+      infos {
+        soustitre
+        info
+      }
+      lieus {
+        nom
+        adresse
+      }
       prochainessessions {
         id
         datedebut
         datefin
+      }
+      formateurs {
+        nom
+        bio
+        linkedin
+        github
+        twitter
+        photo {
+          url
+        }
+      }
+      imagedefond {
+        url
       }
     }
   }
