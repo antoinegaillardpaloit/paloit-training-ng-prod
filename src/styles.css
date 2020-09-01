@@ -75,4 +75,12 @@ p {
 
 img.palo-avatar-round {
     border-radius: 50%;
+    max-width: 130px;
+}
+
+
+/*********** Footer text (here because ngx markdown doesn't play well with style encapsulation ***********/
+
+#palo-footer-adresse > p {
+    color: white;
 }

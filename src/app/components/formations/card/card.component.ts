@@ -13,6 +13,7 @@ export class CardComponent implements OnInit {
   apiUrl: string = environment.apiUrl;
  
   formateursNames: string;
+  formateurPrincipalNom: string;
   formateurPhotoUrl: string;
   domainesIntitules: string;
   prochainesSessions: string[] = [];
@@ -22,11 +23,14 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.formateursNames = this.formatEnumeration(this.cardFormation.formateurs, "nom", "et");
-    this.domainesIntitules = this.formatEnumeration(this.cardFormation.domaines, "intitule", "-");
+    this.domainesIntitules = this.formatEnumeration(this.cardFormation.domaines, "intitule", "·");
     this.prochainesSessions = this.formatDates(this.cardFormation.prochainessessions);
     this.lieu = this.cardFormation.lieus.nom;    
     this.formateurPhotoUrl = this.apiUrl + this.cardFormation.formateurs[0].photo.formats.thumbnail.url;
+    this.formateurPrincipalNom = this.cardFormation.formateurs[0].nom;
   }
+
+  // TODO : services based on these 2 functions, since they are also used (99% the same) in the formation.component.ts
 
   private formatEnumeration(inputArray: any[], wantedProperty: string, separator: string): string {
     const propertyArray: string[] = inputArray.map(el => el[wantedProperty]);
@@ -40,5 +44,4 @@ export class CardComponent implements OnInit {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return sortedArray.map(el => el.toLocaleDateString("fr-FR", options));
   }
-
 }

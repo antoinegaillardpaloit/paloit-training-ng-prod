@@ -6,18 +6,16 @@
                 <br>
                 {{ data.formation?.intitule }}
             </h1>
-            <div>
-                <span *ngFor="let domaine of data.formation?.domaines">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="palo-card-icon" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M3 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 7.586 1H3zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-                        <path
-                            d="M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z" />
-                    </svg>
-                    {{ domaine.intitule }}
-                </span>
-            </div>
+            <p>
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="palo-card-icon" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M3 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 7.586 1H3zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                    <path
+                        d="M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z" />
+                </svg>
+                {{ domainesIntitules }}
+            </p>
         </div>
     </div>
 </header>
@@ -25,25 +23,49 @@
 <div class="container palo-formation-container">
     <div class="row">
 
-        <div class="col-lg-8">
+        <div class="col-lg-8" id="palo-formation-col-pres">
             <section>
                 <div *ngFor="let section of data.formation?.presentation">
-                    <h3>{{ section.soustitre }}</h3>
-                    <p markdown ngPreserveWhitespaces>{{ section.paragraphe.replace(this.mdLinebreak, this.htmlLinebreak) }}</p>
+
+                    <h3 class="palo-formation-paragraph">
+                        {{ section.soustitre }}
+                        <a *ngIf="engageMobileNavigation"
+                            data-toggle="collapse"
+                            class="collapsed"
+                            href="#paragraph{{ section.soustitre.replace(spaces, nothing) }}"
+                            role="button"
+                            aria-expanded="false"
+                            aria-controls="collapseExample">
+                        </a>
+                        <svg *ngIf="engageMobileNavigation"
+                              class="palo-mobile-menu-icon"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20" height="24"
+                              viewBox="0 0 24 24">
+                              <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
+                        </svg>
+                    </h3>
+
+                    <div [ngClass]="{ 'collapse' : engageMobileNavigation }"
+                        id="paragraph{{ section.soustitre.replace(spaces, nothing) }}">
+                        <p markdown ngPreserveWhitespaces class="palo-formation-paragraph">
+                            {{ section.paragraphe.replace(mdLinebreak, htmlLinebreak) }}</p>
+                    </div>
                 </div>
             </section>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-lg-4" id="palo-formation-col-prof">
             <div class="palo-formation-sidebar sticky-top">
                 <section class="palo-formation-formateur">
-                    <img src="{{formateurPhotoUrl}}" alt="" class="palo-avatar-round palo-formation-avatar">
+                    <img src="{{formateurPhotoUrl}}" alt="Photo de {{formateur?.nom}}, le formateur"
+                        class="palo-avatar-round palo-formation-avatar">
 
                     <h3>Le formateur</h3>
 
                     <p>{{ formateur?.bio }}</p>
 
-                    <div style="display: inline-block;">
+                    <div *ngIf="formateur?.github" class="palo-formation-icon">
                         <a href="{{ formateur?.github }}" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path
@@ -53,7 +75,7 @@
                         </a>
                     </div>
 
-                    <div style="display: inline-block;">
+                    <div *ngIf="formateur?.linkedin" class="palo-formation-icon">
                         <a href="{{ formateur?.linkedin }}" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path
@@ -63,7 +85,7 @@
                         </a>
                     </div>
 
-                    <div style="display: inline-block;">
+                    <div *ngIf="formateur?.twitter" class="palo-formation-icon">
                         <a href="{{ formateur?.twitter }}" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path
@@ -74,7 +96,7 @@
                     </div>
                 </section>
 
-                <section>
+                <section class="palo-formation-infos">
                     <div *ngFor="let section of data.formation?.infos">
                         <h4>{{ section.soustitre }}</h4>
                         <p>{{ section.info }}</p>
@@ -82,16 +104,15 @@
 
                     <div>
                         <h4>Lieu</h4>
-                        <p>{{ data.formation?.lieus.nom }}</p>
-                        <p>{{ data.formation?.lieus.adresse }}</p>
+                        <p>{{ data.formation?.lieus.nom }} {{ data.formation?.lieus.adresse }}</p>
                     </div>
 
                     <div>
                         <h4>Prochaines sessions</h4>
 
-                        <div *ngIf="prochainesSessions.length > 0; else noDate">
-                            <p *ngFor="let session of prochainesSessions">Du {{ session[0] }} au {{ session[1] }}</p>
-                        </div>
+                        <ul *ngIf="prochainesSessions.length > 0; else noDate">
+                            <li *ngFor="let session of prochainesSessions">Du {{ session[0] }} au {{ session[1] }}</li>
+                        </ul>
 
                         <ng-template #noDate>
                             <p>Nous contacter</p>

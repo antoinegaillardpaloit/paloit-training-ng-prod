@@ -1,3 +1,5 @@
+/*************** Header with background image ***************/
+
 .palo-formation-header {
     background-position: center center;
     background-repeat: no-repeat;
@@ -9,11 +11,20 @@
     padding: 40px 0;
 }
 
+.palo-formation-header-content {
+    padding: 0 30px;
+}
+
 .palo-formation-header-content h1,
-.palo-formation-header-content span,
+.palo-formation-header-content p,
 .palo-formation-formateur h3,
 .palo-formation-formateur p {
     color: white;
+}
+
+.palo-formation-header-content h1,
+.palo-formation-header-content span {
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 }
 
 .palo-formation {
@@ -21,15 +32,65 @@
     font-weight: 500;
 }
 
+
+/*************** Container for everything else ***************/
+
 .palo-formation-container {
-    margin-top: 2rem;
+    margin-top: 3.5rem;
+    padding: 0 30px;
 }
+
+
+/*************** Left section ***************/
+
+p.palo-formation-paragraph {
+    margin-bottom: 2.5rem;
+}
+
+/* Managing the animated arrow when mobile menu enabled */
+
+h3.palo-formation-paragraph {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.palo-formation-paragraph a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+a + svg {
+    transition: all 0.5s;
+}
+
+a.collapsed + svg {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+
+/*************** Right section (sidebar) ***************/
+
+/* When in sticky position (after scrolling) */
+
+.palo-formation-sidebar {
+    top: 8rem;
+}
+
+/* Formateur module */
 
 .palo-formation-formateur {
     background-color: #426AEA;
     border-radius: 12px;
     box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.25);
     padding: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .palo-formation-avatar {
@@ -47,8 +108,83 @@
     line-height: 19px;
 }
 
-.palo-formation-sidebar {
-    border-left: 1px dashed #05CC98;
-    padding-left: 3rem;
-    top: 6rem;
+div.palo-formation-icon {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+/* Infos module */
+
+.palo-formation-infos {
+    padding: 0 1.5rem;
+}
+
+.palo-formation-infos h4 {
+    font-size: 16px;
+    color: #05CC98;
+}
+
+.palo-formation-infos p,
+.palo-formation-infos li {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #706F67;
+}
+
+@media (min-width: 576px) {
+
+    .palo-formation-infos {
+        padding: 0;
+    }
+}
+
+/* Intermediate layout (between mobile and desktop) :
+the "sidebar" is still below the presentation
+(which is still collapsible),
+but the prof card and the infos are side by side */
+
+@media (min-width: 576px) and (max-width: 992px) {
+
+    .palo-formation-sidebar {
+        display: flex;
+    }
+
+    .palo-formation-formateur,
+    .palo-formation-infos {
+        width: 50%;
+    }
+
+    .palo-formation-infos {
+        padding: 0 2rem;
+        align-self: center;
+    }
+
+    .palo-formation-formateur {
+        margin-bottom: 0;
+    }
+}
+
+/* Biggest (desktop) layout */
+
+@media (min-width: 992px) {
+
+    .palo-formation-formateur {
+        margin-bottom: 3.5rem;
+    }
+
+    /* Spacing between the two sections, with dashed line */
+
+    div#palo-formation-col-pres {
+        padding-right: 3.5rem;
+    }
+
+    div#palo-formation-col-prof {
+        padding-left: 0;
+    }
+
+    .palo-formation-sidebar {
+        border-left: 1px dashed #05CC98;
+        padding-left: 3.5rem;
+    }
 }
