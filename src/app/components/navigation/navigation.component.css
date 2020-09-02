@@ -22,24 +22,24 @@ a.palo-nav-link {
     font-size: 12px;
 }
 
-/** Button */
-
-.palo-button-navbar {
-    background: rgba(5, 204, 152, 1);
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 1.3px;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 12px;
-    padding: 1rem 2rem;
-    margin: 0.25rem 0.5rem;
+.palo-navbar-list {
+    display: flex;
+    align-items: center;
 }
 
-a.palo-button-navbar:hover,
-a.palo-button-navbar:focus {
-    text-decoration: none;
-    color: white;
+/* Contact link in desktop layout is styled like a button */
+
+@media (min-width: 992px) {
+
+    .palo-button-navbar {
+        border-radius: 2rem;
+        color: white !important;
+        line-height: 1.2;
+        padding: 1rem 2rem !important;
+        margin: 0.25rem 0.5rem;
+        background: rgba(5, 204, 152, 1);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+    }
 }
 
 /* Animated toggler button when menu is collapsible on smaller viewport */
