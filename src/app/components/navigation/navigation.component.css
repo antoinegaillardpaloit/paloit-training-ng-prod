@@ -36,7 +36,13 @@ a.palo-nav-link {
     margin: 0.25rem 0.5rem;
 }
 
-/* Animated toggler button when menu is collapsable on smaller viewport */
+a.palo-button-navbar:hover,
+a.palo-button-navbar:focus {
+    text-decoration: none;
+    color: white;
+}
+
+/* Animated toggler button when menu is collapsible on smaller viewport */
 
 .palo-nav-toggler {
     border: none;

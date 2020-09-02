@@ -1,11 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top palo-navbar">
 
     <a class="navbar-brand" href="#" routerLink="/">
-        <img src="assets/images/colour_logo.svg" width="100" class="d-inline-block align-top palo-nav-logo" alt="Logo Palo IT" loading="lazy">
+        <img src="assets/images/colour_logo.svg" width="100" class="d-inline-block align-top palo-nav-logo"
+            alt="Logo Palo IT" loading="lazy">
         <span id="palo-logo-text">training</span>
     </a>
 
-    <button class="navbar-toggler palo-nav-toggler collapsed position-relative" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler palo-nav-toggler collapsed position-relative" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span> </span>
         <span> </span>
         <span> </span>
@@ -13,11 +16,15 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a class="nav-link palo-nav-link" href="#" routerLink="/formations">LES FORMATIONS</a></li>
-            <li class="nav-item"><a class="nav-link palo-nav-link" href="#">LES FORMATEURS</a></li>
-            <li class="nav-item"><a class="nav-link palo-nav-link" href="#">MODALITÉS</a></li>
+            <li class="nav-item" routerLinkActive="active"><a class="nav-link palo-nav-link" href="#" routerLink="/formations">LES FORMATIONS</a></li>
+            <li class="nav-item" routerLinkActive="active"><a class="nav-link palo-nav-link" href="#" routerLink="/formateurs">LES FORMATEURS</a></li>
+            <li class="nav-item" routerLinkActive="active"><a class="nav-link palo-nav-link" href="#">MODALITÉS</a></li>
         </ul>
-        <button class="palo-button palo-button-navbar">CONTACT</button>
+        <a target="_blank"
+            href="mailto:palotraining@palo-it.com?subject=Demande de renseignements concernant vos formations"
+            class="palo-button palo-button-navbar">
+            contact
+        </a>
     </div>
-    
+
 </nav>
