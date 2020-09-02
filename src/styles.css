@@ -10,24 +10,20 @@
     src: url(assets/fonts/bernadette.otf) format("opentype");
 }
 
-html, body {
+html, body, h1, h2, h3, h4, h5, h6, p, span {
     font-family: 'Montserrat', sans-serif;
-    height: 100%;
     color: rgba(0, 0, 0, 0.8);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.8);
 }
-
-p {
-    color: rgba(0, 0, 0, 0.8);
-}
-
 
 /*********** Layout ***********/
+
+html, body {
+    height: 100%;
+}
 
 .palo-container {
     margin-top: 48px;
@@ -79,7 +75,7 @@ img.palo-avatar-round {
 }
 
 
-/*********** Footer text (here because ngx markdown doesn't play well with style encapsulation ***********/
+/*********** Footer text (here because ngx markdown doesn't play well with style encapsulation, cf. https://github.com/jfcere/ngx-markdown/issues/56 ***********/
 
 #palo-footer-adresse > p {
     color: white;

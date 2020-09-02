@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
+import { GraphQLModule } from './graphql.module';
+import { MarkdownModule } from 'ngx-markdown';
+
 import { AppComponent } from './app.component';
 
 import { FormationsComponent } from './components/formations/formations.component';
+import { FormateursComponent } from './components/formateurs/formateurs.component';
 import { FormationComponent } from './components/formation/formation.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { MapComponent } from './components/map/map.component';
@@ -13,11 +19,6 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { CardComponent } from './components/formations/card/card.component';
 import { DomainesComponent } from './components/formations/domaines/domaines.component';
-
-import { GraphQLModule } from './graphql.module';
-import { HttpClientModule } from '@angular/common/http';
-
-import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MarkdownModule } from 'ngx-markdown';
     NavigationComponent,
     FooterComponent,
     CardComponent,
-    DomainesComponent
+    DomainesComponent,
+    FormateursComponent
   ],
   imports: [
     MarkdownModule.forRoot(),
