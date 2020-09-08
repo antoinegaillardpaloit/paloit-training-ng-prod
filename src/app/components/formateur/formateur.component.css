@@ -1,0 +1,28 @@
+div.palo-formateur-container {
+    display: flex;
+    align-items: center;
+    max-width: 75%;
+    margin-bottom: 4rem;
+}
+
+img.palo-avatar-formateur {
+    max-width: 24%;
+}
+
+div.palo-formateur-info {
+    padding-left: 3rem;
+}
+
+h3.palo-formateur-nom {
+    font-size: 24px;
+    line-height: 29px;
+    color: #EF8035;
+}
+
+p.palo-formateur-bio {
+    font-size: 0.9rem;
+}
+
+div.palo-formateur-social-icons {
+    display: flex;
+}

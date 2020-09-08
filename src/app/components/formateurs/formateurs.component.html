@@ -1,3 +1,7 @@
 <div class="container palo-container">
-    <h1>Nos <span class="palo-title-highlight">formateurs</span></h1>
+    <h1>Rencontrez<br>vos futurs <span class="palo-title-highlight">formateurs</span></h1>
+
+    <section class="palo-formateurs">
+        <app-formateur *ngFor="let formateur of formateurs" [formateur]="formateur"></app-formateur>
+    </section>
 </div>

@@ -19,6 +19,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { CardComponent } from './components/formations/card/card.component';
 import { DomainesComponent } from './components/formations/domaines/domaines.component';
+import { FormateurComponent } from './components/formateur/formateur.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DomainesComponent } from './components/formations/domaines/domaines.com
     FooterComponent,
     CardComponent,
     DomainesComponent,
-    FormateursComponent
+    FormateursComponent,
+    FormateurComponent
   ],
   imports: [
     MarkdownModule.forRoot(),
