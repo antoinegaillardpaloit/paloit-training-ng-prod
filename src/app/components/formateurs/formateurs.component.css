@@ -1,3 +1,35 @@
 .palo-formateurs {
-    margin-top: 4rem;
+    margin-top: 3rem;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.palo-formateur-component {
+    margin-bottom: 4rem;
+}
+
+.palo-container h1 {
+    padding: 0 15px;
+}
+
+@media (min-width: 992px) {
+
+    .palo-formateurs {
+        margin-top: 5.5rem;
+    }
+
+    .palo-formateurs,
+    .palo-container h1 {
+        padding: 0;
+    }
+
+    .palo-formateur-component {
+        max-width: 75%;
+        margin-bottom: 5.5rem;
+    }
+
+    .palo-formateur-component-right {
+        align-self: flex-end;
+    }
 }

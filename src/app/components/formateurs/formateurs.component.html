@@ -2,6 +2,12 @@
     <h1>Rencontrez<br>vos futurs <span class="palo-title-highlight">formateurs</span></h1>
 
     <section class="palo-formateurs">
-        <app-formateur *ngFor="let formateur of formateurs" [formateur]="formateur"></app-formateur>
+        <app-formateur
+            *ngFor="let formateur of formateurs; let i = index"
+            [formateur]="formateur"
+            [orientationIndex]="i"
+            class="palo-formateur-component"
+            [ngClass]="i%2 === 0 ? 'palo-formateur-component-left' : 'palo-formateur-component-right'">
+        </app-formateur>
     </section>
 </div>
