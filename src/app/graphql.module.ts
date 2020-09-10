@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
+
 import { APOLLO_OPTIONS } from 'apollo-angular';
 import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
 import { HttpLink } from 'apollo-angular/http';
 
-const uri = 'https://dev.palotraining-admin.com/graphql';
+import { environment } from 'src/environments/environment';
+
+let apiUrl: string = environment.apiUrl;
+
+const uri: string = apiUrl + '/graphql';
 
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
   return {
