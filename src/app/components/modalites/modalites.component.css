@@ -1,0 +1,23 @@
+h1 {
+    padding: 0 15px;
+}
+
+div.row {
+    padding: 0 15px;
+}
+
+div.palo-modalites-sections {
+    margin-top: 2rem;
+}
+
+h3.palo-modalites-titles {
+    margin: 2rem 0;
+}
+
+@media (min-width: 992px) {
+
+    h1,
+    div.row {
+        padding: 0;
+    }
+}

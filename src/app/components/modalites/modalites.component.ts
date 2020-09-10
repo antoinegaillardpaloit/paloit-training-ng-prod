@@ -1,35 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Apollo } from "apollo-angular";
-import ACCUEIL_QUERY from "../../apollo/queries/accueil/accueil";
+import MODALITES_QUERY from "../../apollo/queries/modalites/modalites";
 import { Subscription } from "rxjs";
 
 @Component({
-  selector: 'app-accueil',
-  templateUrl: './accueil.component.html',
-  styleUrls: ['./accueil.component.css']
+  selector: 'app-modalites',
+  templateUrl: './modalites.component.html',
+  styleUrls: ['./modalites.component.css']
 })
-export class AccueilComponent implements OnInit {
+export class ModalitesComponent implements OnInit {
 
   data: any = {};
   loading = true;
   errors: any;
 
-  private queryAccueil: Subscription;
+  private queryModalites: Subscription;
 
   constructor(private apollo: Apollo) {}
 
   ngOnInit(): void {
-    this.queryAccueil = this.apollo.watchQuery({
-      query: ACCUEIL_QUERY
+    this.queryModalites = this.apollo.watchQuery({
+      query: MODALITES_QUERY
     }).valueChanges.subscribe(result => {
       this.data = result.data;
       this.loading = result.loading;
       this.errors = result.errors;
+      console.log(this.data);
     });
   }
 
   ngOnDestroy(): void {
-    this.queryAccueil.unsubscribe();
+    this.queryModalites.unsubscribe();
   }
 }
