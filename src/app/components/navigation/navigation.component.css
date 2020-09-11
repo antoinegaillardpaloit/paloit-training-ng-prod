@@ -20,6 +20,7 @@ a.palo-nav-link {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 12px;
+    overflow: hidden;
 }
 
 .palo-navbar-list {
@@ -27,18 +28,63 @@ a.palo-nav-link {
     align-items: center;
 }
 
+#palo-contact-text {
+    color: rgba(0,0,0,.5);
+}
+
+#palo-contact-icon {
+    display: none;
+}
+
 /* Contact link in desktop layout is styled like a button */
 
 @media (min-width: 992px) {
+
+    a.palo-nav-link {
+        margin-left: 24px;
+    }
 
     .palo-button-navbar {
         border-radius: 2rem;
         color: white !important;
         line-height: 1.2;
-        padding: 1rem 2rem !important;
+        padding: 1.4rem 4rem !important;
         margin: 0.25rem 0.5rem;
-        background: rgba(5, 204, 152, 1);
+        background-color: rgba(5, 204, 152, 1);
         box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    #palo-contact-icon,
+    #palo-contact-text {
+        position: absolute;
+    }
+
+    #palo-contact-icon {
+        display: flex;
+        font-size: 24px;
+        margin-bottom: -100px;
+        transition: margin-bottom 0.3s;
+    }
+
+    #palo-contact-text {
+        color: white;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 12px;
+        transition: margin-top 0.3s;
+    }
+    
+    .palo-button-navbar:hover #palo-contact-text {
+        margin-top: -100px;
+    }
+
+    .palo-button-navbar:hover #palo-contact-icon {
+        margin-bottom: 0;
     }
 }
 

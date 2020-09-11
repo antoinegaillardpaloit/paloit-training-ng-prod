@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Subscription } from "rxjs";
 import { Apollo } from "apollo-angular";
 import ACCUEIL_QUERY from "../../apollo/queries/accueil/accueil";
-import { Subscription } from "rxjs";
+
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-accueil',
@@ -14,6 +16,13 @@ export class AccueilComponent implements OnInit {
   data: any = {};
   loading = true;
   errors: any;
+
+  apiUrl: string = environment.apiUrl;
+
+  photoFile: string = "/uploads/Team_blog_268a9414d0.jpg";
+  photoURl: string = this.apiUrl + this.photoFile;
+  letterFile: string = "/uploads/palo_orange_bb2e792835.png";
+  letterUrl: string = this.apiUrl + this.letterFile;
 
   private queryAccueil: Subscription;
 

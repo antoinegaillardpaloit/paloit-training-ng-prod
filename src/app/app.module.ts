@@ -21,6 +21,7 @@ import { CardComponent } from './components/formations/card/card.component';
 import { DomainesComponent } from './components/formations/domaines/domaines.component';
 import { FormateurComponent } from './components/formateur/formateur.component';
 import { ModalitesComponent } from './components/modalites/modalites.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ModalitesComponent } from './components/modalites/modalites.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
