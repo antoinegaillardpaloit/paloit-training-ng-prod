@@ -7,6 +7,7 @@ const DOMAINES_QUERY = gql`
       intitule
       formations {
         id
+        accroche
         intitule
         lieus {
           id

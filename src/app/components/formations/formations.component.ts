@@ -68,6 +68,7 @@ export class FormationsComponent implements OnInit {
       this.formationsToDisplay = this.formationsToDisplay.filter(ftd => formationsRequested.some(fr => ftd.id === fr.id));
 
       // In formations already displayed, add those from the new request that are not already in there
+      // (via a method which itself calls the sort by date method at the end)
       this.addFormationsToDisplay(formationsRequested);
     }
   }
@@ -109,8 +110,8 @@ export class FormationsComponent implements OnInit {
       // Attribute all formations
       this.allformations = allFormationsDataApi.formations;
 
-      // Initialize formations to display with all formations
-      this.formationsToDisplay = this.allformations.slice();
+      // Initialize formations to display with all formations after sorting them
+      this.formationsToDisplay = this.sortFormationsByDate(this.allformations);
 
       this.loading = result.loading;
       this.errors = result.errors;
@@ -121,6 +122,23 @@ export class FormationsComponent implements OnInit {
     requestedFormations.forEach(requestedFormation => {
       if(!this.formationsToDisplay.map(ftd => ftd.id).includes(requestedFormation.id)) this.formationsToDisplay.push(requestedFormation);
     })
+    this.formationsToDisplay = this.sortFormationsByDate(this.formationsToDisplay);
   }
 
+  private sortFormationsByDate(unsortedFormations: any[]) {
+    let formationsWithDates = unsortedFormations.filter( f => f.prochainessessions.length > 0);
+    let formationsWithoutDates = unsortedFormations.filter( f => f.prochainessessions.length === 0);
+    formationsWithDates.sort(this.compareDates);
+    return [...formationsWithDates, ...formationsWithoutDates];
+  }
+
+  private compareDates(a, b) {
+    if (a.prochainessessions[0].datedebut < b.prochainessessions[0].datedebut) {
+      return -1;
+    }
+    if (a.prochainessessions[0].datedebut > b.prochainessessions[0].datedebut) {
+      return 1;
+    }
+    return 0;
+  }
 }
