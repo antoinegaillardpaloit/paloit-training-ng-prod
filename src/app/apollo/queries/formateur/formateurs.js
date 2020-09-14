@@ -14,6 +14,7 @@ const FORMATEURS_QUERY = gql`
       }
       formations {
         id
+        slug
         intitule
       }
     }
