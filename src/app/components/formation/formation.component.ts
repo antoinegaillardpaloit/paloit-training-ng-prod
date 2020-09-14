@@ -33,8 +33,8 @@ export class FormationComponent implements OnInit {
   engageMobileNavigation: boolean = true;
 
   // These properties are used to complete the markdown parsing in the componenent template, via the replace() js function. ngx-markdown seems to render \n as a space instead of a line break.
-  mdLinebreak = /\n/g;
-  htmlLinebreak: string = '<br>';
+  // mdLinebreak = /\n/g;
+  // htmlLinebreak: string = '<br>';
 
   // Used in the template to get a dynamic id for the paragraphs based on their subtitle
   spaces = /\s+/g;

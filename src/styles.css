@@ -19,6 +19,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
+html {
+    overflow-y: scroll; /* To make vertical scrollbar permanent so that the navbar doesn't shift on the right while the page load */
+}
+
 /*********** Layout ***********/
 
 html, body {

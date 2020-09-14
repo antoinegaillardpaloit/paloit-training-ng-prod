@@ -48,8 +48,8 @@
 
                     <div [ngClass]="{ 'collapse' : engageMobileNavigation }"
                         id="paragraph{{ section.soustitre.replace(spaces, nothing) }}">
-                        <p markdown ngPreserveWhitespaces class="palo-formation-paragraph">
-                            {{ section.paragraphe.replace(mdLinebreak, htmlLinebreak) }}</p>
+                        <!-- <p markdown ngPreserveWhitespaces class="palo-formation-paragraph">{{ section.paragraphe.replace(mdLinebreak, htmlLinebreak) }}</p> -->
+                        <p markdown ngPreserveWhitespaces class="palo-formation-paragraph">{{ section.paragraphe }}</p>
                     </div>
                 </div>
             </section>
