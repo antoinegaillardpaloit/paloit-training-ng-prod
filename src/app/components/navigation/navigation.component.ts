@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
@@ -9,11 +11,24 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 })
 export class NavigationComponent implements OnInit {
 
+  // Used to pass the bootstrap toggle attribute to the links on mobile
+  engageMobileNavigation: boolean = true;
+
   faEnveloppe = faEnvelope;
 
-  constructor() { }
+  constructor(private breakpointObserver: BreakpointObserver) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    this.breakpointObserver
+    .observe(['(min-width: 992px)'])
+    .subscribe((state: BreakpointState) => {
+      if (state.matches) {
+        this.engageMobileNavigation = false;
+      } else {
+        this.engageMobileNavigation = true;
+      }
+    });
+  }
   
   contact(){
     window.open(
@@ -21,5 +36,4 @@ export class NavigationComponent implements OnInit {
       '_blank'
     );
   }
-
 }

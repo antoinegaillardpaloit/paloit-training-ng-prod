@@ -11,7 +11,7 @@ import { ModalitesComponent } from './components/modalites/modalites.component';
 const routes: Routes = [
   { path: '', component: AccueilComponent },
   { path: "formations", component: FormationsComponent },
-  { path: "formations/:id", component: FormationComponent },
+  { path: "formations/:id/:slug", component: FormationComponent },
   { path: "formateurs", component: FormateursComponent },
   { path: "modalites", component: ModalitesComponent }
 ];

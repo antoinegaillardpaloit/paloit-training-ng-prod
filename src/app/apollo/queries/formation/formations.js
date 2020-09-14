@@ -4,6 +4,7 @@ const FORMATIONS_QUERY = gql`
   query Formations {
     formations {
       id
+      slug
       intitule
       lieus {
         id

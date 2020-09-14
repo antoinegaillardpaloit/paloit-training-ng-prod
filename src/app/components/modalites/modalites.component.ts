@@ -26,7 +26,6 @@ export class ModalitesComponent implements OnInit {
       this.data = result.data;
       this.loading = result.loading;
       this.errors = result.errors;
-      console.log(this.data);
     });
   }
 

@@ -19,7 +19,7 @@
             <li class="nav-item" routerLinkActive="active">
                 <a
                     class="nav-link palo-nav-link"
-                    data-toggle="collapse"
+                    [attr.data-toggle]="engageMobileNavigation ? 'collapse' : ''"
                     data-target="#navbarSupportedContent"
                     routerLink="/formations">
                     LES FORMATIONS
@@ -28,7 +28,7 @@
             <li class="nav-item" routerLinkActive="active">
                 <a
                     class="nav-link palo-nav-link"
-                    data-toggle="collapse"
+                    [attr.data-toggle]="engageMobileNavigation ? 'collapse' : ''"
                     data-target="#navbarSupportedContent"
                     routerLink="/formateurs">
                     LES FORMATEURS
@@ -37,7 +37,7 @@
             <li class="nav-item" routerLinkActive="active">
                 <a
                     class="nav-link palo-nav-link"
-                    data-toggle="collapse"
+                    [attr.data-toggle]="engageMobileNavigation ? 'collapse' : ''"
                     data-target="#navbarSupportedContent"
                     routerLink="/modalites">
                     MODALITÉS
@@ -46,7 +46,7 @@
             <li class="nav-item">
                 <a
                     class="nav-link palo-nav-link palo-button-navbar"
-                    data-toggle="collapse"
+                    [attr.data-toggle]="engageMobileNavigation ? 'collapse' : ''"
                     data-target="#navbarSupportedContent"
                     (click)="contact()">
                     <fa-icon [icon]="faEnveloppe" id="palo-contact-icon"></fa-icon>
