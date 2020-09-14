@@ -78,13 +78,17 @@ a.palo-nav-link {
         font-size: 12px;
         transition: margin-top 0.3s;
     }
-    
-    .palo-button-navbar:hover #palo-contact-text {
-        margin-top: -100px;
+
+    .palo-button-navbar:hover {
+        cursor: pointer;
     }
 
     .palo-button-navbar:hover #palo-contact-icon {
         margin-bottom: 0;
+    }
+    
+    .palo-button-navbar:hover #palo-contact-text {
+        margin-top: -100px;
     }
 }
 
