@@ -16,13 +16,39 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto palo-navbar-list">
-            <li class="nav-item" routerLinkActive="active"><a class="nav-link palo-nav-link" routerLink="/formations">LES FORMATIONS</a></li>
-            <li class="nav-item" routerLinkActive="active"><a class="nav-link palo-nav-link" routerLink="/formateurs">LES FORMATEURS</a></li>
-            <li class="nav-item" routerLinkActive="active"><a class="nav-link palo-nav-link" routerLink="/modalites">MODALITÉS</a></li>
+            <li class="nav-item" routerLinkActive="active">
+                <a
+                    class="nav-link palo-nav-link"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    routerLink="/formations">
+                    LES FORMATIONS
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a
+                    class="nav-link palo-nav-link"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    routerLink="/formateurs">
+                    LES FORMATEURS
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a
+                    class="nav-link palo-nav-link"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    routerLink="/modalites">
+                    MODALITÉS
+                </a>
+            </li>
             <li class="nav-item">
-                <a target="_blank"
-                    href="mailto:palotraining@palo-it.com?subject=Demande de renseignements concernant vos formations"
-                    class="nav-link palo-nav-link palo-button-navbar">
+                <a
+                    class="nav-link palo-nav-link palo-button-navbar"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    (click)="contact()">
                     <fa-icon [icon]="faEnveloppe" id="palo-contact-icon"></fa-icon>
                     <span id="palo-contact-text">contact</span>
                 </a>

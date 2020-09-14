@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
-
-
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -15,7 +13,13 @@ export class NavigationComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+  
+  contact(){
+    window.open(
+      "mailto:palotraining@palo-it.com?subject=Demande de renseignements concernant vos formations",
+      '_blank'
+    );
   }
 
 }

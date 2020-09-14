@@ -1,5 +1,3 @@
-
-
 div.palo-formateur-title {
     display: flex;
     align-items: center;
@@ -10,11 +8,12 @@ h3.palo-formateur-nom {
     font-size: 24px;
     line-height: 29px;
     color: #EF8035;
+    margin: 16px 0;
 }
 
 div.palo-formateur-social-icons {
     display: flex;
-    margin: 16px 0;
+    /* margin: 16px 0; */
 }
 
 p.palo-formateur-bio {
