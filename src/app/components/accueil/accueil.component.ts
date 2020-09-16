@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { Subscription } from "rxjs";
 import { Apollo } from "apollo-angular";
@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './accueil.component.html',
   styleUrls: ['./accueil.component.css']
 })
-export class AccueilComponent implements OnInit {
+export class AccueilComponent implements OnInit, OnDestroy {
 
   data: any = {};
   loading = true;

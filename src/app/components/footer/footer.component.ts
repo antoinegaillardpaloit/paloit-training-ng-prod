@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Apollo } from "apollo-angular";
 import CONTACT_QUERY from "../../apollo/queries/coordonnees/coordonnees";
 import { Subscription } from "rxjs";
@@ -8,7 +8,7 @@ import { Subscription } from "rxjs";
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent implements OnInit, OnDestroy {
 
   data: any = {};
   loading = true;
@@ -35,5 +35,4 @@ export class FooterComponent implements OnInit {
   ngOnDestroy(): void {
     this.queryContact.unsubscribe();
   }
-
 }

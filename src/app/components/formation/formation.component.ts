@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
@@ -13,7 +13,7 @@ import FORMATION_QUERY from "src/app/apollo/queries/formation/formation";
   templateUrl: './formation.component.html',
   styleUrls: ['./formation.component.css']
 })
-export class FormationComponent implements OnInit {
+export class FormationComponent implements OnInit, OnDestroy {
 
   private queryFormation: Subscription;
   

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { Subscription } from 'rxjs';
 import { Apollo } from 'apollo-angular';
@@ -10,7 +10,7 @@ import FORMATEURS_QUERY from "src/app/apollo/queries/formateur/formateurs";
   templateUrl: './formateurs.component.html',
   styleUrls: ['./formateurs.component.css']
 })
-export class FormateursComponent implements OnInit {
+export class FormateursComponent implements OnInit, OnDestroy {
 
   private queryFormateurs: Subscription;
 

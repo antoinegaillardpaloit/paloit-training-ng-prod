@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { Apollo } from "apollo-angular";
 import MODALITES_QUERY from "../../apollo/queries/modalites/modalites";
@@ -9,7 +9,7 @@ import { Subscription } from "rxjs";
   templateUrl: './modalites.component.html',
   styleUrls: ['./modalites.component.css']
 })
-export class ModalitesComponent implements OnInit {
+export class ModalitesComponent implements OnInit, OnDestroy {
 
   data: any = {};
   loading = true;

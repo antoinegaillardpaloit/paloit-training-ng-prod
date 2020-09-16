@@ -22,5 +22,4 @@ export class FormateurComponent implements OnInit {
     this.photoUrl = this.apiUrl + this.formateur.photo.url;
     this.orientationClass = this.orientationIndex%2 === 0 ? 'palo-formateur-left' : 'palo-formateur-right';
   }
-
 }
