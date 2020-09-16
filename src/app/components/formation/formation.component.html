@@ -4,7 +4,7 @@
             <h1>
                 <span class="palo-formation">Formation</span>
                 <br>
-                {{ data.formation?.intitule }}
+                {{ formation?.intitule }}
             </h1>
             <p>
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="palo-card-icon" fill="currentColor"
@@ -21,11 +21,11 @@
 </header>
 
 <div class="container palo-formation-container">
-    <div class="row">
+    <div *ngIf="!error" class="row">
 
         <div class="col-lg-8" id="palo-formation-col-pres">
             <section>
-                <div *ngFor="let section of data.formation?.presentation">
+                <div *ngFor="let section of formation?.presentation">
 
                     <h3 class="palo-formation-paragraph">
                         {{ section.soustitre }}
@@ -97,30 +97,53 @@
                 </section>
 
                 <section class="palo-formation-infos">
-                    <div *ngFor="let section of data.formation?.infos">
+                    <div *ngFor="let section of formation?.infos">
                         <h4>{{ section.soustitre }}</h4>
                         <p>{{ section.info }}</p>
                     </div>
 
                     <div>
                         <h4>Lieu</h4>
-                        <p>{{ data.formation?.lieus.nom }} {{ data.formation?.lieus.adresse }}</p>
+                        <p>{{ formation?.lieus.nom }} {{ formation?.lieus.adresse }}</p>
                     </div>
 
                     <div>
                         <h4>Prochaines sessions</h4>
 
-                        <ul *ngIf="prochainesSessions.length > 0; else noDate">
-                            <li *ngFor="let session of prochainesSessions">Du {{ session[0] }} au {{ session[1] }}</li>
-                        </ul>
+                        <div *ngIf="prochainesDates.length > 0; else noDate">
+                            <ul >
+                                <li *ngFor="let session of prochainesDates">Du {{ session[0] }} au {{ session[1] }}</li>
+                            </ul>
+                            <a
+                                class="palo-button-navbar"
+                                (click)="sinscrire()">
+                                <fa-icon [icon]="faEnveloppe" id="palo-contact-icon"></fa-icon>
+                                <span id="palo-contact-text">S'inscrire</span>
+                            </a>
+                        </div>
 
                         <ng-template #noDate>
-                            <p>Nous contacter</p>
+                            <a
+                                class="palo-button-navbar"
+                                (click)="contact()">
+                                <fa-icon [icon]="faEnveloppe" id="palo-contact-icon"></fa-icon>
+                                <span id="palo-contact-text">Nous contacter</span>
+                            </a>
                         </ng-template>
                     </div>
+
+
                 </section>
             </div>
         </div>
 
+    </div>
+
+    <div *ngIf="error" class="row">
+        <div class="alert alert-danger">
+            <h3>Une erreur s'est produite</h3>
+            <p>{{ error }}</p>
+            <p>Réessayez ultérieurement.</p>
+        </div>
     </div>
 </div>

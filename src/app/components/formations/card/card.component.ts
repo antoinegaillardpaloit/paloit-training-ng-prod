@@ -2,6 +2,12 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { environment } from 'src/environments/environment';
 
+import { Formation } from 'src/app/models/formation.model';
+import { Lieu } from 'src/app/models/lieu.model';
+import { Formateur } from 'src/app/models/formateur.model';
+
+import { SharedService } from 'src/app/services/shared.service';
+
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -9,40 +15,24 @@ import { environment } from 'src/environments/environment';
 })
 export class CardComponent implements OnInit {
 
-  @Input() cardFormation: any;
-
   apiUrl: string = environment.apiUrl;
- 
+
+  @Input() cardFormation: Formation;
   formateursNames: string;
-  formateurPrincipalNom: string;
+  formateurPrincipal: Formateur
   formateurPhotoUrl: string;
   domainesIntitules: string;
-  prochainesSessions: string[] = [];
-  lieu: string;
+  prochainesDates: string[][] = [];
+  lieu: Lieu;
 
-  constructor() { }
+  constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void {
-    this.formateursNames = this.formatEnumeration(this.cardFormation.formateurs, "nom", "et");
-    this.domainesIntitules = this.formatEnumeration(this.cardFormation.domaines, "intitule", "·");
-    this.prochainesSessions = this.formatDates(this.cardFormation.prochainessessions);
-    this.lieu = this.cardFormation.lieus.nom;    
-    this.formateurPhotoUrl = this.apiUrl + this.cardFormation.formateurs[0].photo.formats.thumbnail.url;
-    this.formateurPrincipalNom = this.cardFormation.formateurs[0].nom;
-  }
-
-  // TODO : services based on these 2 functions, since they are also used (99% the same) in the formation.component.ts
-
-  private formatEnumeration(inputArray: any[], wantedProperty: string, separator: string): string {
-    const propertyArray: string[] = inputArray.map(el => el[wantedProperty]);
-    const propertyString: string = propertyArray.join(` ${separator} `);
-    return propertyString;
-  }
-
-  private formatDates(inputArray: any[]) {
-    const datesArray = inputArray.map(el => new Date(el.datedebut));
-    const sortedArray = datesArray.sort((a, b) => a.getTime() - b.getTime());
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    return sortedArray.map(el => el.toLocaleDateString("fr-FR", options));
+    this.formateurPrincipal = this.cardFormation.formateurs[0];
+    this.formateurPhotoUrl = this.apiUrl + this.formateurPrincipal.photo.url;
+    this.formateursNames = this.sharedService.formatEnumeration(this.cardFormation.formateurs, "nom", "et");
+    this.domainesIntitules = this.sharedService.formatEnumeration(this.cardFormation.domaines, "intitule", "·");
+    this.prochainesDates = this.sharedService.formatDates(this.cardFormation.prochainessessions);
+    this.lieu = this.cardFormation.lieus;
   }
 }

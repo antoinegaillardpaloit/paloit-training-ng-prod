@@ -1,4 +1,4 @@
 export interface Session {
-    datedebut: Date,
-    datefin: Date
+    datedebut: string,
+    datefin: string
 }

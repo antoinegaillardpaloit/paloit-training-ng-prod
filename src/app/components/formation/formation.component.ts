@@ -1,12 +1,17 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
 
+import { ActivatedRoute } from "@angular/router";
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 
 import { Subscription } from "rxjs";
-import { Apollo } from "apollo-angular";
 import { environment } from 'src/environments/environment';
-import FORMATION_QUERY from "src/app/apollo/queries/formation/formation";
+
+import { FormationsService } from 'src/app/services/formations.service';
+import { SharedService } from 'src/app/services/shared.service';
+import { Formation } from 'src/app/models/formation.model';
+import { Formateur } from 'src/app/models/formateur.model';
+
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-formation',
@@ -19,15 +24,16 @@ export class FormationComponent implements OnInit, OnDestroy {
   
   apiUrl: string = environment.apiUrl;
 
-  formateur: any;
+  formationId: number;
+  formation: Formation;
+  formateur: Formateur;
   formationPhotoUrl: string;
   formateurPhotoUrl: string;
-  prochainesSessions: any[] = [];
+  prochainesDates: string[][] = [];
   domainesIntitules: string;
 
-  data: any = {};
-  loading = true;
-  errors: any;
+  loading: boolean = true;
+  error: any = null;
 
   // Used to pass the collapse bootstrap class to the paragraphs on mobile
   engageMobileNavigation: boolean = true;
@@ -40,31 +46,19 @@ export class FormationComponent implements OnInit, OnDestroy {
   spaces = /\s+/g;
   nothing: string = '';
 
+  faEnveloppe = faEnvelope;
+
   constructor(
-    private apollo: Apollo,
     private route: ActivatedRoute,
-    private breakpointObserver: BreakpointObserver) { }
+    private breakpointObserver: BreakpointObserver,
+    private formationsService: FormationsService,
+    private sharedService: SharedService) { }
 
   ngOnInit(): void {
 
-    this.queryFormation = this.apollo.watchQuery({
-      query: FORMATION_QUERY,
-      variables: {
-        id: this.route.snapshot.paramMap.get("id")
-      }
-    }).valueChanges.subscribe(result => {
+    this.formationId = +this.route.snapshot.paramMap.get("id");
 
-      this.data = result.data;
-
-      this.formateur = this.data.formation.formateurs[0];
-      this.formationPhotoUrl = this.apiUrl + this.data.formation.imagedefond.url;
-      this.formateurPhotoUrl = this.apiUrl + this.data.formation.formateurs[0].photo.url;
-      this.prochainesSessions = this.formatDates(this.data.formation.prochainessessions);
-      this.domainesIntitules = this.formatEnumeration(this.data.formation.domaines, "intitule", "·");
-
-      this.loading = result.loading;
-      this.errors = result.errors;
-    });
+    this.getFormationById(this.formationId);
 
     this.breakpointObserver
       .observe(['(min-width: 992px)'])
@@ -81,18 +75,39 @@ export class FormationComponent implements OnInit, OnDestroy {
     this.queryFormation.unsubscribe();
   }
 
-  // TODO : services based on these 2 functions, since they are also used (99% the same) in the card.component.ts
-
-  private formatEnumeration(inputArray: any[], wantedProperty: string, separator: string): string {
-    const propertyArray: string[] = inputArray.map(el => el[wantedProperty]);
-    const propertyString: string = propertyArray.join(` ${separator} `);
-    return propertyString;
+  sinscrire() {
+    window.open(
+      "mailto:palotraining@palo-it.com?subject=Inscription à la formation " + this.formation.intitule,
+      "_blank"
+    );
   }
 
-  private formatDates(inputArray: any[]) {
-    const datesArray = inputArray.map(el => [new Date(el.datedebut), new Date(el.datefin)]);
-    const sortedArray = datesArray.sort((a, b) => a[0].getTime() - b[0].getTime());
-    const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-    return sortedArray.map(el => [el[0].toLocaleString("fr-FR", options), el[1].toLocaleString("fr-FR", options)]);
+  contact() {
+    window.open(
+      "mailto:palotraining@palo-it.com?subject=Concernant la formation " + this.formation.intitule,
+      "_blank"
+    );
   }
+
+  private getFormationById(id: number) {
+    this.queryFormation = this.formationsService.fetchFormationById(id).subscribe(
+
+      result => {
+        this.formation = result.data.formation;
+        this.formateur = this.formation.formateurs[0];
+        this.formationPhotoUrl = this.apiUrl + this.formation.imagedefond.url;
+        this.formateurPhotoUrl = this.apiUrl + this.formation.formateurs[0].photo.url;
+        this.prochainesDates = this.sharedService.formatDates(this.formation.prochainessessions);
+        this.domainesIntitules = this.sharedService.formatEnumeration(this.formation.domaines, "intitule", "·");
+  
+        this.loading = result.loading;
+      },
+
+      error => {
+        this.loading = false;
+        this.error = "Nous n'avons pas pu récupérer la formation.";
+      }
+    );
+  }
+  
 }

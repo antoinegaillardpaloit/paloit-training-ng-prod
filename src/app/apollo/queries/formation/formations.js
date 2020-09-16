@@ -32,6 +32,7 @@ const FORMATIONS_QUERY = gql`
         id
         nom
         photo {
+          url
           formats
         }
       }

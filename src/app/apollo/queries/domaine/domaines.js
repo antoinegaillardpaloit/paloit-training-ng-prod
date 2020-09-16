@@ -32,6 +32,7 @@ const DOMAINES_QUERY = gql`
           id
           nom
           photo {
+            url
             formats
           }
         }

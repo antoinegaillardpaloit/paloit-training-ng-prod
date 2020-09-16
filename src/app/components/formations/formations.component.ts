@@ -62,7 +62,7 @@ export class FormationsComponent implements OnInit, OnDestroy {
 
       error => {
         this.loadingDomaines = false;
-        this.domainesError = "Nous n'avons pu récupérer les catégories."
+        this.domainesError = "Nous n'avons pu récupérer les catégories.";
       }
     );
   }

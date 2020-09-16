@@ -23,7 +23,7 @@
             <div class="row palo-card-content">
 
                 <div class="col-3 palo-card-avatar-container">
-                    <img class="palo-avatar-round palo-card-avatar" src="{{formateurPhotoUrl}}" alt="Photo de {{formateurPrincipalNom}}, le formateur">
+                    <img class="palo-avatar-round palo-card-avatar" src="{{ formateurPhotoUrl }}" alt="Photo de {{ formateurPrincipal.nom }}, le formateur principal">
                 </div>
 
                 <div class="col-9 palo-card-info">
@@ -37,7 +37,7 @@
                         Avec {{ formateursNames }}
                     </p>
 
-                    <p *ngIf="prochainesSessions.length > 0; else noDate" class="palo-card-content-date">
+                    <p *ngIf="prochainesDates.length > 0; else noDate" class="palo-card-content-date">
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="palo-card-icon" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -47,7 +47,7 @@
                             <path fill-rule="evenodd"
                                 d="M3.5 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zm9 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5z" />
                         </svg>
-                        {{ prochainesSessions[0]}}
+                        {{ prochainesDates[0][0]}}
                     </p>
 
                     <ng-template #noDate>
@@ -71,7 +71,7 @@
                             <path fill-rule="evenodd"
                                 d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                         </svg>
-                        {{ lieu }}
+                        {{ lieu.nom }}
                     </p>
 
                 </div>
