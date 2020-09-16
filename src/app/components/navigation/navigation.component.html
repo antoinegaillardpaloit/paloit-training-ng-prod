@@ -45,7 +45,8 @@
             </li>
             <li class="nav-item">
                 <a
-                    class="nav-link palo-nav-link palo-button-navbar"
+                    class="nav-link palo-nav-link"
+                    [ngClass]="{ 'palo-button palo-button-contact' : !engageMobileNavigation }"
                     [attr.data-toggle]="engageMobileNavigation ? 'collapse' : ''"
                     data-target="#navbarSupportedContent"
                     (click)="contact()">

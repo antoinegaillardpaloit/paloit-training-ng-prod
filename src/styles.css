@@ -55,7 +55,7 @@ html, body {
 .palo-button {
     border: 0;
     border-radius: 2rem;
-    color: white;
+    color: white !important;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.8rem;
     line-height: 1.2;
@@ -68,6 +68,18 @@ html, body {
 
 .palo-button:focus {
     outline: none;
+}
+
+.palo-button-contact {
+    overflow: hidden;
+    padding: 1.4rem 4rem !important;
+    /* margin: 0.25rem 0.5rem !important; */
+    background-color: rgba(5, 204, 152, 1);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 

@@ -44,20 +44,6 @@ a.palo-nav-link {
         margin-left: 24px;
     }
 
-    .palo-button-navbar {
-        border-radius: 2rem;
-        color: white !important;
-        line-height: 1.2;
-        padding: 1.4rem 4rem !important;
-        margin: 0.25rem 0.5rem;
-        background-color: rgba(5, 204, 152, 1);
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-    }
-
     #palo-contact-icon,
     #palo-contact-text {
         position: absolute;
@@ -79,15 +65,11 @@ a.palo-nav-link {
         transition: margin-top 0.3s;
     }
 
-    .palo-button-navbar:hover {
-        cursor: pointer;
-    }
-
-    .palo-button-navbar:hover #palo-contact-icon {
+    .palo-button-contact:hover #palo-contact-icon {
         margin-bottom: 0;
     }
     
-    .palo-button-navbar:hover #palo-contact-text {
+    .palo-button-contact:hover #palo-contact-text {
         margin-top: -100px;
     }
 }
