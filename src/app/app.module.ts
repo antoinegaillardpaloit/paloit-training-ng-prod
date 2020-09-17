@@ -22,7 +22,7 @@ import { DomainesComponent } from './components/formations/domaines/domaines.com
 import { FormateurComponent } from './components/formateur/formateur.component';
 import { ModalitesComponent } from './components/modalites/modalites.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { PaloFooterComponent } from './palo-footer/palo-footer.component';
+import { PaloFooterComponent } from './components/palo-footer/palo-footer.component';
 
 @NgModule({
   declarations: [

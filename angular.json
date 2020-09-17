@@ -30,11 +30,14 @@
               "src/_redirects"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/app/slick.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.slim.min.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "src/scripts/slick.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "src/scripts/footer-contact-fr.js"
             ]
           },
           "configurations": {
