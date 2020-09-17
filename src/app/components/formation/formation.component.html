@@ -114,18 +114,24 @@
                             <ul >
                                 <li *ngFor="let session of prochainesDates">Du {{ session[0] }} au {{ session[1] }}</li>
                             </ul>
-                            <a class="palo-button palo-button-contact"
+                            <a class="palo-button palo-button-contact palo-button-contact-formation"
                                 (click)="sinscrire()">
-                                <fa-icon [icon]="faEnveloppe" id="palo-contact-icon"></fa-icon>
-                                <span id="palo-contact-text">S'inscrire</span>
+                                <div class="palo-child">
+                                    <fa-icon [icon]="faEnveloppe" id="palo-contact-icon"></fa-icon>
+                                </div>
+                                
+                                <div class="palo-child" id="palo-contact-text">S'inscrire</div>
                             </a>
                         </div>
 
                         <ng-template #noDate>
-                            <a class="palo-button palo-button-contact"
+                            <a class="palo-button palo-button-contact palo-button-contact-formation"
                                 (click)="contact()">
-                                <fa-icon [icon]="faEnveloppe" id="palo-contact-icon"></fa-icon>
-                                <span id="palo-contact-text">Nous contacter</span>
+                                <div class="palo-child" id="palo-child-icon">
+                                    <fa-icon [icon]="faEnveloppe" id="palo-contact-icon"></fa-icon>
+                                </div>
+                                
+                                <div class="palo-child" id="palo-contact-text">Nous contacter</div>
                             </a>
                         </ng-template>
                     </div>

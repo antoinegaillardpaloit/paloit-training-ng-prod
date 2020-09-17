@@ -72,8 +72,8 @@ html, body {
 
 .palo-button-contact {
     overflow: hidden;
-    padding: 1.4rem 4rem !important;
-    /* margin: 0.25rem 0.5rem !important; */
+    padding: 0rem 1rem !important;
+    height: 48px;
     background-color: rgba(5, 204, 152, 1);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
     display: flex;

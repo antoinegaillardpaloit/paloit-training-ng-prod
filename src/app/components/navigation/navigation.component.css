@@ -44,15 +44,20 @@ a.palo-nav-link {
         margin-left: 24px;
     }
 
+    /* a#palo-nav-link-contact {
+        height: 48px;
+    }
+
     #palo-contact-icon,
     #palo-contact-text {
         position: absolute;
-    }
+    } */
 
     #palo-contact-icon {
         display: flex;
         font-size: 24px;
         margin-bottom: -100px;
+        margin-left: 50%;
         transition: margin-bottom 0.3s;
     }
 
@@ -62,6 +67,8 @@ a.palo-nav-link {
         text-transform: uppercase;
         font-weight: 600;
         font-size: 12px;
+        margin-left: -50%;
+        margin-right: 25%;
         transition: margin-top 0.3s;
     }
 

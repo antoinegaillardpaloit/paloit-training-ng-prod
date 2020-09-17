@@ -145,14 +145,32 @@ div.palo-formation-icon {
 
 #palo-contact-icon,
 #palo-contact-text {
-    position: absolute;
+    /* position: absolute; */
+}
+
+.palo-button-contact-formation {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    text-decoration: none;
+}
+
+div.palo-child {
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+
+div#palo-child-icon {
+    margin-bottom: -100px;
+    transition: margin-bottom 0.3s;
 }
 
 #palo-contact-icon {
-    display: flex;
+    /* display: flex; */
     font-size: 24px;
-    margin-bottom: -100px;
-    transition: margin-bottom 0.3s;
+    
+    /* margin-left: 50%; */
+    
 }
 
 #palo-contact-text {
@@ -161,10 +179,16 @@ div.palo-formation-icon {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 12px;
+    /* margin-left: -50%;
+    margin-right: 25%; */
     transition: margin-top 0.3s;
 }
 
-.palo-button-contact:hover #palo-contact-icon {
+.palo-button-contact:hover {
+    text-decoration: none;
+}
+
+.palo-button-contact:hover #palo-child-icon {
     margin-bottom: 0;
 }
 
