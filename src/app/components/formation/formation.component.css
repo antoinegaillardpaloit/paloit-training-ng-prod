@@ -160,12 +160,12 @@ div.palo-child {
     grid-column-start: 1;
 }
 
-div#palo-child-icon {
+.palo-child-icon {
     margin-bottom: -100px;
     transition: margin-bottom 0.3s;
 }
 
-#palo-contact-icon {
+.palo-contact-icon {
     /* display: flex; */
     font-size: 24px;
     
@@ -173,7 +173,7 @@ div#palo-child-icon {
     
 }
 
-#palo-contact-text {
+.palo-contact-text {
     color: white;
     letter-spacing: 1.3px;
     text-transform: uppercase;
@@ -188,11 +188,11 @@ div#palo-child-icon {
     text-decoration: none;
 }
 
-.palo-button-contact:hover #palo-child-icon {
+.palo-button-contact:hover .palo-child-icon {
     margin-bottom: 0;
 }
 
-.palo-button-contact:hover #palo-contact-text {
+.palo-button-contact:hover .palo-contact-text {
     margin-top: -100px;
 }
 

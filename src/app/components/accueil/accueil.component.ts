@@ -19,9 +19,9 @@ export class AccueilComponent implements OnInit, OnDestroy {
 
   apiUrl: string = environment.apiUrl;
 
-  photoFile: string = "/uploads/team_bf12c6f2d6.jpg";
+  photoFile: string = "/uploads/Team_blog_268a9414d0.jpg";
   photoURl: string = this.apiUrl + this.photoFile;
-  letterFile: string = "/uploads/palo_orange_4a263502f1.png";
+  letterFile: string = "/uploads/palo_orange_bb2e792835.png";
   letterUrl: string = this.apiUrl + this.letterFile;
 
   private queryAccueil: Subscription;
