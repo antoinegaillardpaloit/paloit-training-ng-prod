@@ -73,6 +73,8 @@ export class FormationsComponent implements OnInit, OnDestroy {
     this.queryFormations = this.formationsService.fetchFormations().subscribe(
       
       result => {
+
+        console.log(result.data);
         // Attribute all formations
         this.allformations = result.data.formations;
 
