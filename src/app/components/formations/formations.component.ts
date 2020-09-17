@@ -52,6 +52,8 @@ export class FormationsComponent implements OnInit, OnDestroy {
     this.queryDomaines = this.domainesService.fetchDomaines().subscribe(
 
       result => {
+
+        console.log(result.data);
         // Filter results to get only the domaines that have at least one formation attached
         result.data.domaines.forEach((domaine) => {
           if (domaine.formations.length > 0) this.availableDomaines.push(domaine);
