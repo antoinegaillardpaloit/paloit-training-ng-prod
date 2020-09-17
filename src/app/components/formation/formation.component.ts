@@ -93,6 +93,7 @@ export class FormationComponent implements OnInit, OnDestroy {
     this.queryFormation = this.formationsService.fetchFormationById(id).subscribe(
 
       result => {
+        console.log(result.data);
         this.formation = result.data.formation;
         this.formateur = this.formation.formateurs[0];
         this.formationPhotoUrl = this.apiUrl + this.formation.imagedefond.url;
