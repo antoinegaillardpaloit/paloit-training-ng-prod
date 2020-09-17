@@ -77,9 +77,11 @@ export class FormationsComponent implements OnInit, OnDestroy {
         console.log(result.data);
         // Attribute all formations
         this.allformations = result.data.formations;
+        console.log(this.allformations);
 
         // Initialize formations to display with all formations after sorting them
         this.formationsToDisplay = this.formationsService.sortFormationsByDate(this.allformations);
+        console.log(this.formationsToDisplay);
 
         this.loadingFormations = result.loading;
       },
