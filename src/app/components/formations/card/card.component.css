@@ -6,11 +6,12 @@ a, a:hover, p {
 }
 
 div.palo-card {
-    border-radius: 12px;
-    background-color: #05CC98;
-    padding: 0;
-    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.25);
     border: none;
+    padding: 0;
+    border-radius: 12px;
+    background: #05CC98;
+    background: linear-gradient(0deg, rgba(5,204,152,1) 100%, rgba(56,230,175,1) 0%);
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.25);
 }
 
 div.palo-card-body {
@@ -19,12 +20,20 @@ div.palo-card-body {
 
 /* Card tags */
 
-p.palo-card-tags {
-    position: absolute;
-    top: -30px;
-    left: 25px;
+.palo-card-tags {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.25em;
+    padding: 0 30px;
+    min-height: 36px;
+    color: #706F67;
+}
+
+.palo-card-tags p {
     font-weight: bold;
     font-size: 12px;
+    margin: 0;
+    color: #706F67;
 }
 
 /* Card header */
@@ -78,18 +87,18 @@ div.palo-card-info {
 @media (min-width: 768px) {
 
     div.palo-card-header {
-        min-height: 14em;
+        min-height: 11em;
     }
 
     div.palo-card-content {
-        min-height: 11em;
+        min-height: 8.5em;
     }
 }
 
 @media (min-width: 1200px) {
 
     div.palo-card-header {
-        min-height: 12em;
+        min-height: 10em;
     }
 }
 
