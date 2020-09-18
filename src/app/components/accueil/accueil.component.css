@@ -9,7 +9,7 @@ h1,
 
 p#palo-accueil-chapeau-content,
 #palo-accueil-signature p {
-    font-size: 22px;
+    font-size: 1.25rem;
     line-height: 27px;
     font-weight: 500;
 }
@@ -21,6 +21,8 @@ div.palo-accueil-row {
 
 .palo-accueil-cell {
     margin: 1rem 0;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
