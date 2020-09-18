@@ -23,6 +23,8 @@ import { FormateurComponent } from './components/formateur/formateur.component';
 import { ModalitesComponent } from './components/modalites/modalites.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PaloFooterComponent } from './components/palo-footer/palo-footer.component';
+import { MentionsComponent } from './components/mentions/mentions.component';
+import { ConfidentialiteComponent } from './components/confidentialite/confidentialite.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { PaloFooterComponent } from './components/palo-footer/palo-footer.compon
     FormateursComponent,
     FormateurComponent,
     ModalitesComponent,
-    PaloFooterComponent
+    PaloFooterComponent,
+    MentionsComponent,
+    ConfidentialiteComponent
   ],
   imports: [
     MarkdownModule.forRoot(),

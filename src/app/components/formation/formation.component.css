@@ -1,44 +1,8 @@
-/*************** Header with background image ***************/
-
-.palo-formation-header {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.palo-formation-header-wrapper {
-    background: rgba(5, 204, 152, 0.67);
-    padding: 40px 0;
-}
-
-.palo-formation-header-content {
-    padding: 0 30px;
-}
-
-.palo-formation-header-content h1,
-.palo-formation-header-content p,
-.palo-formation-header-content span,
-.palo-formation-formateur h3,
-.palo-formation-formateur p {
-    color: white;
-}
-
-.palo-formation-header-content h1,
-.palo-formation-header-content span {
-    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-}
-
-.palo-formation {
-    font-family: 'bernadette', serif;
-    font-weight: 500;
-}
-
-
-/*************** Container for everything else ***************/
+/*************** Container for everything but the header ***************/
 
 .palo-formation-container {
     margin-top: 3.5rem;
-    padding: 0 30px;
+    padding: 0 30px 2rem 30px;
 }
 
 
@@ -97,6 +61,11 @@ a.collapsed + svg {
 
 .palo-formation-avatar {
     width: 50%;
+}
+
+.palo-formation-formateur h3,
+.palo-formation-formateur p {
+  color: white;
 }
 
 .palo-formation-formateur h3 {
@@ -238,6 +207,7 @@ but the prof card and the infos are side by side */
 
     div#palo-formation-col-prof {
         padding-left: 0;
+        padding-bottom: 2rem;
     }
 
     .palo-formation-sidebar {

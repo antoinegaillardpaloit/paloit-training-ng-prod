@@ -1,13 +1,6 @@
-h1 {
-    padding: 0 15px;
-}
-
+h1,
 div.row {
     padding: 0 15px;
-}
-
-div.palo-modalites-sections {
-    margin-top: 2rem;
 }
 
 h3.palo-modalites-titles {
