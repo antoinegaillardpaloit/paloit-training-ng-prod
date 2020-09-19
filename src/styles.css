@@ -123,6 +123,10 @@ div.palo-sections {
 
 .palo-button-contact {
     overflow: hidden;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
     padding: 0rem 1rem !important;
     height: 48px;
     background-color: rgba(5, 204, 152, 1);
@@ -131,6 +135,69 @@ div.palo-sections {
     align-items: center;
     justify-content: center;
     position: relative;
+}
+
+.palo-button-mail {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  text-decoration: none;
+}
+
+div.palo-button-element {
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+.palo-button-element-icon-ver {
+  margin-bottom: -100px;
+  transition: margin-bottom 0.3s;
+}
+
+.palo-button-element-icon-hor {
+  margin-right: -500px;
+  transition: margin-right 0.3s;
+}
+
+.palo-fa-icon {
+  font-size: 24px;
+}
+
+.palo-button-element-text {
+  color: white;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  /* transition: margin-top 0.3s; */
+}
+
+.palo-button-element-text-ver {
+  transition: margin-top 0.3s;
+}
+
+.palo-button-element-text-hor {
+  transition: margin-left 0.3s;
+}
+
+.palo-button-contact:hover {
+  text-decoration: none;
+}
+
+.palo-button-contact:hover .palo-button-element-icon-ver {
+  margin-bottom: 0;
+}
+
+.palo-button-contact:hover .palo-button-element-icon-hor {
+  margin-right: 0;
+}
+
+.palo-button-contact:hover .palo-button-element-text-ver {
+  margin-top: -100px;
+}
+
+.palo-button-contact:hover .palo-button-element-text-hor {
+  margin-left: -500px;
 }
 
 .palo-button-highlight {

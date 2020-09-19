@@ -30,10 +30,10 @@ export class NavigationComponent implements OnInit {
     });
   }
   
-  contact(){
-    window.open(
-      "mailto:palotraining@palo-it.com?subject=Demande de renseignements concernant vos formations",
-      '_blank'
-    );
-  }
+  // contact(){
+  //   window.open(
+  //     "mailto:palotraining@palo-it.com?subject=Demande de renseignements concernant vos formations",
+  //     '_blank'
+  //   );
+  // }
 }

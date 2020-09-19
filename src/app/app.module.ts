@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +26,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PaloFooterComponent } from './components/palo-footer/palo-footer.component';
 import { MentionsComponent } from './components/mentions/mentions.component';
 import { ConfidentialiteComponent } from './components/confidentialite/confidentialite.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { ConfidentialiteComponent } from './components/confidentialite/confident
     ModalitesComponent,
     PaloFooterComponent,
     MentionsComponent,
-    ConfidentialiteComponent
+    ConfidentialiteComponent,
+    ContactFormComponent
   ],
   imports: [
     MarkdownModule.forRoot(),
@@ -51,7 +54,8 @@ import { ConfidentialiteComponent } from './components/confidentialite/confident
     AppRoutingModule,
     GraphQLModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

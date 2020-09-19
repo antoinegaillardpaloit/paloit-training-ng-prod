@@ -9,6 +9,7 @@ import { FormateursComponent } from './components/formateurs/formateurs.componen
 import { ModalitesComponent } from './components/modalites/modalites.component';
 import { MentionsComponent } from './components/mentions/mentions.component';
 import { ConfidentialiteComponent } from './components/confidentialite/confidentialite.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
 
 const routes: Routes = [
   { path: '', component: AccueilComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: "formateurs", component: FormateursComponent },
   { path: "modalites", component: ModalitesComponent },
   { path: "mentions-legales", component: MentionsComponent },
+  { path: "contact", component: ContactFormComponent },
   { path: "politique-de-confidentialite", component: ConfidentialiteComponent }
 ];
 

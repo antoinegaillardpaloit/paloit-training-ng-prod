@@ -114,24 +114,24 @@
                             <ul >
                                 <li *ngFor="let session of prochainesDates">Du {{ session[0] }} au {{ session[1] }}</li>
                             </ul>
-                            <a class="palo-button palo-button-contact palo-button-contact-formation"
+                            <a class="palo-button palo-button-contact palo-button-mail"
                                 (click)="sinscrire()">
-                                <div class="palo-child palo-child-icon">
-                                    <fa-icon [icon]="faEnveloppe" class="palo-contact-icon"></fa-icon>
+                                <div class="palo-button-element palo-button-element-icon-ver">
+                                    <fa-icon [icon]="faEnveloppe" class="palo-fa-icon"></fa-icon>
                                 </div>
                                 
-                                <div class="palo-child palo-contact-text">S'inscrire</div>
+                                <div class="palo-button-element palo-button-element-text palo-button-element-text-ver">S'inscrire</div>
                             </a>
                         </div>
 
                         <ng-template #noDate>
-                            <a class="palo-button palo-button-contact palo-button-contact-formation"
+                            <a class="palo-button palo-button-contact palo-button-mail"
                                 (click)="contact()">
-                                <div class="palo-child palo-child-icon">
-                                    <fa-icon [icon]="faEnveloppe" class="palo-contact-icon"></fa-icon>
+                                <div class="palo-button-element palo-button-element-icon-ver">
+                                    <fa-icon [icon]="faEnveloppe" class="palo-fa-icon"></fa-icon>
                                 </div>
                                 
-                                <div class="palo-child palo-contact-text">Nous contacter</div>
+                                <div class="palo-button-element palo-button-element-text palo-button-element-text-ver">Nous contacter</div>
                             </a>
                         </ng-template>
                     </div>

@@ -1,0 +1,71 @@
+<section class="container palo-container">
+    <h1>Nous <span class="palo-title-highlight">contacter</span></h1>
+
+    <div class="row">
+
+        <div class="col-lg-8 palo-sections">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="email">Votre email</label>
+                    <input
+                        type="email"
+                        class="form-control"
+                        aria-describedby="emailHelp"
+                        id="email"
+                        formControlName="email">
+                    <small id="emailHelp" class="form-text text-muted">Votre email ne sera jamais partagé avec qui que ce soit.</small>
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Votre prénom</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="prenom"
+                        formControlName="prenom">
+                </div>
+                <div class="form-group">
+                    <label for="nom">Votre nom de famille</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="nom"
+                        formControlName="nom">
+                </div>
+                <div class="form-group">
+                    <label for="ville">Ville</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="ville"
+                        formControlName="ville">
+                </div>
+                <div class="form-group">
+                    <label for="entreprise">Entreprise</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="entreprise"
+                        formControlName="entreprise">
+                </div>
+                <div class="form-group">
+                    <label for="message">Votre message</label>
+                    <textarea
+                        class="form-control"
+                        id="message"
+                        formControlName="message">
+                    </textarea>
+                </div>
+                <button type="submit" class="palo-button palo-button-contact palo-button-mail" [disabled]="">
+                    <div class="palo-button-element palo-button-element-icon-hor">
+                        <fa-icon [icon]="faPaperPlane" class="palo-fa-icon"></fa-icon>
+                    </div>
+                    
+                    <div class="palo-button-element palo-button-element-text palo-button-element-text-hor">Envoyer</div>
+                </button>
+            </form>
+        </div>
+
+        <div class="col-lg-4 palo-single-illus">
+        </div>
+    </div>
+</section>
