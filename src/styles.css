@@ -32,7 +32,7 @@ html, body {
 
 .palo-container {
     margin-top: 48px;
-    margin-bottom: 2.5rem;
+    margin-bottom: 4rem;
 }
 
 @media (max-width: 768px) {
@@ -93,10 +93,24 @@ div.palo-sections {
 }
 
 @media (max-width: 992px) {
+  
+  .palo-single-illus {
+    display: flex;
+  }
     
   .palo-single-illus > svg {
-    width: 55%;
-    margin: 3rem 0;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  
+  .palo-single-illus {
+    position: sticky;
+    top: 8rem;
+    padding-left: 2rem;
   }
 }
 
@@ -142,6 +156,8 @@ div.palo-sections {
   grid-template-columns: 1fr;
   text-align: center;
   text-decoration: none;
+  margin-top: 1.5rem;
+  min-width: 7rem;
 }
 
 div.palo-button-element {
@@ -169,7 +185,6 @@ div.palo-button-element {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 12px;
-  /* transition: margin-top 0.3s; */
 }
 
 .palo-button-element-text-ver {

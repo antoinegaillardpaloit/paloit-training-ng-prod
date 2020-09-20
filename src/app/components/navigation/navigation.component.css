@@ -32,6 +32,10 @@ a.palo-nav-link {
     color: rgba(0,0,0,.5);
 }
 
+li.active #palo-contact-text {
+    color: rgba(0,0,0,.9);
+}
+
 #palo-contact-icon {
     display: none;
 }
@@ -44,15 +48,6 @@ a.palo-nav-link {
         margin-left: 24px;
     }
 
-    /* a#palo-nav-link-contact {
-        height: 48px;
-    }
-
-    #palo-contact-icon,
-    #palo-contact-text {
-        position: absolute;
-    } */
-
     #palo-contact-icon {
         display: flex;
         font-size: 24px;
@@ -61,6 +56,7 @@ a.palo-nav-link {
         transition: margin-bottom 0.3s;
     }
 
+    li.active #palo-contact-text,
     #palo-contact-text {
         color: white;
         letter-spacing: 1.3px;

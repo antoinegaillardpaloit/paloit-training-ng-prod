@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-
 import { ContactService } from 'src/app/services/contact.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-contact-form',
@@ -18,6 +17,8 @@ export class ContactFormComponent implements OnInit {
   contactForm: FormGroup;
 
   faPaperPlane = faPaperPlane;
+  apiUrl: string = environment.apiUrl;
+  photoUrl: string = this.apiUrl + "/uploads/contact_e684a6c3eb.jpg";
 
   ngOnInit(): void {
 
