@@ -1,3 +1,7 @@
+div.row {
+    padding: 0 15px;
+}
+
 div.palo-formateur-title {
     display: flex;
     align-items: center;
@@ -13,7 +17,6 @@ h3.palo-formateur-nom {
 
 div.palo-formateur-social-icons {
     display: flex;
-    /* margin: 16px 0; */
 }
 
 p.palo-formateur-bio {
