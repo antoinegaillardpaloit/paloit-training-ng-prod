@@ -110,6 +110,10 @@ div.palo-formation-icon {
     }
 }
 
+a.palo-button-contact {
+    margin-top: 1.5rem;
+}
+
 /* Intermediate layout (between mobile and desktop) :
 the "sidebar" is still below the presentation
 (which is still collapsible),

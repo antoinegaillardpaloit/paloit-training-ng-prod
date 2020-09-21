@@ -52,8 +52,7 @@ export class FormationsComponent implements OnInit, OnDestroy {
     this.queryDomaines = this.domainesService.fetchDomaines().subscribe(
 
       result => {
-
-        console.log(result.data);
+        
         // Filter results to get only the domaines that have at least one formation attached
         result.data.domaines.forEach((domaine) => {
           if (domaine.formations.length > 0) this.availableDomaines.push(domaine);
@@ -74,14 +73,11 @@ export class FormationsComponent implements OnInit, OnDestroy {
       
       result => {
 
-        console.log(result.data);
         // Attribute all formations
         this.allformations = result.data.formations;
-        console.log(this.allformations);
 
         // Initialize formations to display with all formations after sorting them
         this.formationsToDisplay = this.formationsService.sortFormationsByDate(this.allformations);
-        console.log(this.formationsToDisplay);
 
         this.loadingFormations = result.loading;
       },

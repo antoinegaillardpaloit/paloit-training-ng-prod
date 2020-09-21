@@ -28,17 +28,17 @@ a.palo-nav-link {
     align-items: center;
 }
 
-#palo-contact-text {
+/* #palo-contact-text {
     color: rgba(0,0,0,.5);
 }
 
 li.active #palo-contact-text {
     color: rgba(0,0,0,.9);
-}
+} */
 
-#palo-contact-icon {
+/* #palo-contact-icon {
     display: none;
-}
+} */
 
 /* Contact link in desktop layout is styled like a button */
 
@@ -48,7 +48,24 @@ li.active #palo-contact-text {
         margin-left: 24px;
     }
 
-    #palo-contact-icon {
+    a.palo-button-contact {
+        padding: 1rem 1.7rem !important;
+    }
+
+    .palo-button-ripple {
+        background-position: center;
+        background: #05cc98 radial-gradient(circle, transparent 1%, rgba(5, 204, 152, 0.5) 1%) center/15000%;
+        /* background: #05cc98 radial-gradient(circle, transparent 1%, #05cc98 1%) center/15000%; */
+        transition: background 0.5s;
+    }
+    
+    .palo-button-ripple:hover {
+        /* background-color: #38E680; */
+        background-color: rgba(5, 204, 152, 0.5);
+        background-size: 100%;
+    }
+
+    /* #palo-contact-icon {
         display: flex;
         font-size: 24px;
         margin-bottom: -100px;
@@ -74,7 +91,7 @@ li.active #palo-contact-text {
     
     .palo-button-contact:hover #palo-contact-text {
         margin-top: -100px;
-    }
+    } */
 }
 
 /* Animated toggler button when menu is collapsible on smaller viewport */
