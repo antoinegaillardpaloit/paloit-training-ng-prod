@@ -42,8 +42,6 @@ export class ContactService {
       ] 
     }
 
-    console.log(formData);
-    
     return this.http.post(this.api, formData);
   }
 }

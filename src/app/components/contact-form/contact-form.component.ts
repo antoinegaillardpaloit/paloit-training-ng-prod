@@ -20,28 +20,42 @@ export class ContactFormComponent implements OnInit {
   apiUrl: string = environment.apiUrl;
   photoUrl: string = this.apiUrl + "/uploads/contact_e684a6c3eb.jpg";
 
+  okResponse: boolean;
+  okMessage = "Merci, votre formulaire a bien été transmis. Nous y répondrons dans les plus brefs délais."
+
+  errorResponse: boolean;
+  errorMessage = "Désolé, votre formulaire n'a pu être transmis. Veuillez réessayer ultérieurement ou nous contacter directement à palotraining@palo-it.com.";
+
   ngOnInit(): void {
 
+    this.okResponse = false;
+    this.errorResponse = false;
+
     this.contactForm = this.formBuilder.group({
-      "email": new FormControl(null, [Validators.compose([Validators.required, Validators.email])]),
-      "prenom": new FormControl(null, [Validators.required]),
-      "nom": new FormControl(null, [Validators.required]),
-      "ville": new FormControl(null, [Validators.required]),
-      "entreprise": new FormControl(null),
-      "message": new FormControl(null, [Validators.required])
+      "email": new FormControl('', [Validators.compose([Validators.required, Validators.email])]),
+      "prenom": new FormControl('', [Validators.required]),
+      "nom": new FormControl('', [Validators.required]),
+      "ville": new FormControl(''),
+      "entreprise": new FormControl(''),
+      "message": new FormControl('', [Validators.required])
     });
   }
 
   onSubmit() {
-    console.log(this.contactForm.value);
+    this.okResponse = false;
+    this.errorResponse = false;
 
     this.contactService.postMessage(this.contactForm.value).subscribe(
       response => {
         console.log(response);
+        this.okResponse = true;
       },
       error => {
         console.log(error);
+        this.errorResponse = true;
       }
     );
+
+    this.contactForm.reset();
   }
 }

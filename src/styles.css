@@ -156,8 +156,6 @@ div.palo-sections {
   grid-template-columns: 1fr;
   text-align: center;
   text-decoration: none;
-  /* margin-top: 1.5rem;
-  min-width: 7rem; */
   align-items: center;
   justify-content: center;
 }
