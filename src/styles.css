@@ -151,13 +151,15 @@ div.palo-sections {
     position: relative;
 }
 
-.palo-button-mail {
-  /* display: grid;
+.palo-button-grid {
+  display: grid;
   grid-template-columns: 1fr;
   text-align: center;
-  text-decoration: none; */
-  margin-top: 1.5rem;
-  min-width: 7rem;
+  text-decoration: none;
+  /* margin-top: 1.5rem;
+  min-width: 7rem; */
+  align-items: center;
+  justify-content: center;
 }
 
 div.palo-button-element {
