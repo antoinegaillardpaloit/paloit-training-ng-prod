@@ -41,12 +41,21 @@
                     <textarea class="form-control" id="message" formControlName="message">
                     </textarea>
                 </div>
-                <button type="submit" class="palo-button palo-button-contact palo-button-mail" [disabled]="">
+                <!-- <button type="submit" class="palo-button palo-button-contact palo-button-mail" [disabled]="">
                     <div class="palo-button-element palo-button-element-icon-hor">
                         <fa-icon [icon]="faPaperPlane" class="palo-fa-icon"></fa-icon>
                     </div>
 
                     <div class="palo-button-element palo-button-element-text palo-button-element-text-hor">Envoyer</div>
+                </button> -->
+                <button type="submit" class="palo-button palo-button-contact palo-button-mail" [disabled]="">
+                    <div id="muf">
+                        <div class="palo-button-element palo-button-element-icon-hor">
+                            <fa-icon [icon]="faPaperPlane" class="palo-fa-icon"></fa-icon>
+                        </div>
+    
+                        <div class="palo-button-element palo-button-element-text palo-button-element-text-hor">Envoyer</div>
+                    </div>
                 </button>
             </form>
         </div>

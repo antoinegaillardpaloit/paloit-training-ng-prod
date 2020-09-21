@@ -23,7 +23,7 @@ p.palo-formateur-bio {
     font-size: 0.9rem;
 }
 
-h4.palo-formateur-formations {
+.palo-formateur-formations h4 {
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
@@ -75,5 +75,9 @@ span.palo-formateur-icon {
 
     img.palo-avatar-formateur {
         max-width: 24%;
+    }
+
+    .palo-formateur-right .palo-formateur-formations .row {
+        justify-content: flex-end;
     }
 }
