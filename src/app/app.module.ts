@@ -15,9 +15,7 @@ import { FormationsComponent } from './components/formations/formations.componen
 import { FormateursComponent } from './components/formateurs/formateurs.component';
 import { FormationComponent } from './components/formation/formation.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
-import { MapComponent } from './components/map/map.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { CardComponent } from './components/formations/card/card.component';
 import { DomainesComponent } from './components/formations/domaines/domaines.component';
 import { FormateurComponent } from './components/formateur/formateur.component';
@@ -34,9 +32,7 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
     FormationsComponent,
     FormationComponent,
     AccueilComponent,
-    MapComponent,
     NavigationComponent,
-    FooterComponent,
     CardComponent,
     DomainesComponent,
     FormateursComponent,
