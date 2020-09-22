@@ -35,6 +35,10 @@ p.palo-formateur-bio {
     font-weight: 600;
 }
 
+img.palo-avatar-formateur {
+    flex-shrink: 0;
+}
+
 /***********************************/
 /* Orientation-specific properties */
 /***********************************/
