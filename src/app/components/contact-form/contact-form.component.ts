@@ -57,6 +57,12 @@ export class ContactFormComponent implements OnInit {
       }
     );
 
+    window.scroll({
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth'
+    });
+
     this.contactForm.reset();
   }
 }
