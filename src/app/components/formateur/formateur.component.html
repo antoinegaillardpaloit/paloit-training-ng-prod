@@ -42,7 +42,7 @@
         <div *ngIf="formateur.formations.length > 0" class="palo-formateur-formations">
             <h4>Formations actuellement proposées :</h4>
             <div class="row">
-                <a *ngFor="let formation of formateur.formations" class="palo-button palo-button-highlight palo-button-formation"
+                <a *ngFor="let formation of formateur.formations" class="palo-button palo-button-shadow palo-button-formation"
                     [routerLink]="['/formations', formation.id, formation.slug]">
                     {{formation.intitule}}
                 </a>

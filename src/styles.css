@@ -1,13 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-@import "~leaflet/dist/leaflet.css";
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 
-/*********** Fonts ***********/
+/***********************************/
+/******* Fonts and text ************/
+/***********************************/
 
 @font-face {
     font-family: bernadette;
     src: url(assets/fonts/bernadette.otf) format("opentype");
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src:url(assets/fonts/icomoon/icomoon.eot);
+	src:url(assets/fonts/icomoon/icomoon.eot?#iefix) format('embedded-opentype'),
+		url(assets/fonts/icomoon/icomoon.woff) format('woff'),
+		url(assets/fonts/icomoon/icomoon.ttf) format('truetype'),
+		url(assets/fonts/icomoon/icomoon.svg#icomoon) format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 html, body, h1, h2, h3, h4, h5, h6, p, span {
@@ -19,12 +31,14 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
+
+/***********************************/
+/************* Layout **************/
+/***********************************/
+
 html {
-    overflow-y: scroll; /* To make vertical scrollbar permanent so that the navbar doesn't shift on the right while the page load */
+  overflow-y: scroll; /* To make vertical scrollbar permanent so that the navbar doesn't shift on the right while the page load */
 }
-
-
-/*********** Layout ***********/
 
 html, body {
     height: 100%;
@@ -43,7 +57,9 @@ html, body {
 }
 
 
-/*********** Headings ***********/
+/***********************************/
+/************* Headings ************/
+/***********************************/
 
 .palo-title-highlight {
     color: transparent;
@@ -52,7 +68,9 @@ html, body {
 }
 
 
-/*************** Header with background image ***************/
+/***********************************/
+/*** Header with background image **/
+/***********************************/
 
 .palo-header {
   background-position: center center;
@@ -86,7 +104,9 @@ html, body {
 }
 
 
-/*********** Singles pages ***********/
+/***********************************/
+/*********** Single pages **********/
+/***********************************/
 
 div.palo-sections {
   margin-top: 2rem;
@@ -115,40 +135,107 @@ div.palo-sections {
 }
 
 
-/*********** Buttons ***********/
+/***********************************/
+/************* Buttons *************/
+/***********************************/
+
+/*********** Base styling **********/
 
 .palo-button {
-    border: 0;
-    border-radius: 2rem;
-    color: white !important;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-    line-height: 1.2;
-    white-space: nowrap;
-    text-decoration: none;
-    padding: 0.65rem 0.9rem;
-    margin: 0.25rem;
-    cursor: pointer;
+  border: none;
+  outline: none;
+  text-decoration: none;
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+  border-radius: 2rem;
+  color: white !important;
+  background-color: rgba(5, 204, 152, 1);
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.2;
+  margin: .25rem;
+  white-space: nowrap;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.palo-button:hover {
+  text-decoration: none;
+  background-color: rgba(5, 210, 155, 0.9);
 }
 
 .palo-button:focus {
     outline: none;
 }
 
+/*********** With arrow on hover (used on : home and nav) **********/
+
+.palo-button-arrow {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 1rem 2.6rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px 0px;
+  overflow: hidden;
+}
+
+.palo-button-arrow:after {
+  content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.palo-button-arrow:before {
+  content: "\e00d";
+  font-family: 'icomoon';
+	speak: none;
+	text-transform: none;
+	position: relative;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  right: 17%;
+	opacity: 0;
+	color: #fff;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.palo-button-arrow:hover:before {
+  right: 8%;
+	opacity: 1;
+}
+
+/*********** With shadow on hover (used on : formateur) **********/
+
+.palo-button-shadow {
+  -webkit-transition: background-color 0.3s, box-shadow 0.3s;
+  -moz-transition: background-color 0.3s, box-shadow 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.palo-button-shadow:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px 0px;
+}
+
+/*********** With icon on hover (used on : formation and contact form) **********/
+
 .palo-button-contact {
-    overflow: hidden;
-    letter-spacing: 1.3px;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 12px;
-    /* padding: 0rem 1rem !important; */
-    height: 48px;
-    background-color: rgba(5, 204, 152, 1);
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  overflow: hidden;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  height: 48px;
+  background-color: rgba(5, 204, 152, 1);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .palo-button-grid {
@@ -215,22 +302,10 @@ div.palo-button-element {
   margin-left: -500px;
 }
 
-.palo-button-highlight {
-  font-weight: 600;
-  background-color: rgba(5, 204, 152, 1);
-  box-shadow: none;
-  transition: background-color 0.3s, box-shadow 0.3s;
-}
 
-.palo-button-highlight:hover {
-  text-decoration: none;
-  color: white;
-  background-color: rgba(5, 215, 156, 0.9);
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px 0px;
-}
-
-
-/*********** Images ***********/
+/***********************************/
+/************* Images **************/
+/***********************************/
 
 img.palo-avatar-round {
     border-radius: 50%;
@@ -238,7 +313,9 @@ img.palo-avatar-round {
 }
 
 
-/*********** Palo Footer ***********/
+/***********************************/
+/************* Footer **************/
+/***********************************/
 
 .footer__container {
   padding: 1rem;

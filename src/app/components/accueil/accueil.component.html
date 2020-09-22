@@ -228,7 +228,7 @@
         
             <div class="palo-accueil-cell col-md-6 d-flex align-items-center">
                 <p markdown>{{data.accueil.premierparagraphe}}</p>
-                <a routerLink="/formateurs" class="palo-button palo-button-highlight">Découvrez nos formateurs</a>
+                <a routerLink="/formateurs" class="palo-button palo-button-arrow">Découvrez nos formateurs</a>
             </div>
         </div>
         
@@ -483,7 +483,7 @@
 
             <div class="palo-accueil-cell col-md-6 d-flex align-items-center">
                 <p>{{data.accueil?.secondparagraphe}}</p>
-                <a routerLink="/formations" class="palo-button palo-button-highlight">Toutes nos formations</a>
+                <a routerLink="/formations" class="palo-button palo-button-arrow">Toutes nos formations</a>
             </div>
         </div>
 
@@ -498,7 +498,8 @@
 
             <div class="palo-accueil-cell col-md-6 d-flex align-items-center" id="palo-accueil-signature">
                 <p>{{data.accueil?.conclusion}}</p>
-                <div id="palo-accueil-signature-letter"></div>
+                <a routerLink="/contact" class="palo-button palo-button-arrow">Prenons contact</a>
+                <!-- <div id="palo-accueil-signature-letter"></div> -->
             </div>
         </div>
     </div>

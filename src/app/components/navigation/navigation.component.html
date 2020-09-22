@@ -44,20 +44,10 @@
                 </a>
             </li>
             <li class="nav-item" routerLinkActive="active">
-                <!-- <a
-                    class="nav-link palo-nav-link"
-                    id="palo-nav-link-contact"
-                    [ngClass]="{ 'palo-button palo-button-contact' : !engageMobileNavigation }"
-                    [attr.data-toggle]="engageMobileNavigation ? 'collapse' : ''"
-                    data-target="#navbarSupportedContent"
-                    routerLink="/contact">
-                    <fa-icon [icon]="faEnveloppe" id="palo-contact-icon"></fa-icon>
-                    <span id="palo-contact-text">contact</span>
-                </a> -->
                 <a
                     class="nav-link palo-nav-link"
                     id="palo-nav-link-contact"
-                    [ngClass]="{ 'palo-button palo-button-contact palo-button-ripple' : !engageMobileNavigation }"
+                    [ngClass]="{ 'palo-button palo-button-arrow' : !engageMobileNavigation }"
                     [attr.data-toggle]="engageMobileNavigation ? 'collapse' : ''"
                     data-target="#navbarSupportedContent"
                     routerLink="/contact">

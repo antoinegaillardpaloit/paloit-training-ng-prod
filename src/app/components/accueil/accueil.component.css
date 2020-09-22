@@ -25,6 +25,9 @@ div.palo-accueil-row {
     justify-content: center;
 }
 
+.palo-button-arrow {
+    margin-top: 1rem;
+}
 
 /** Circular but responsive photo **/
 
@@ -51,12 +54,9 @@ div.palo-accueil-row {
     object-fit: cover;
 }
 
-/*********************************/
-
-
 /** Responsive P **/
 
-div#palo-accueil-signature {
+/* div#palo-accueil-signature {
     position: relative;
 }
 
@@ -74,10 +74,7 @@ div#palo-accueil-signature-letter {
     left: -5%;
     width: 35%;
     height: 35%;
-}
-
-/*******************/
-
+} */
 
 @media (min-width: 768px) {
 
