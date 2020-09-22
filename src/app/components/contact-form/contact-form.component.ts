@@ -37,7 +37,8 @@ export class ContactFormComponent implements OnInit {
       "nom": new FormControl('', [Validators.required]),
       "ville": new FormControl(''),
       "entreprise": new FormControl(''),
-      "message": new FormControl('', [Validators.required])
+      "message": new FormControl('', [Validators.required]),
+      "consent": new FormControl(false)
     });
   }
 

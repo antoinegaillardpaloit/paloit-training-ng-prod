@@ -36,3 +36,7 @@ button:disabled {
     background-color: rgba(5, 204, 152, 0.5);
     box-shadow: none;
 }
+
+div.form-check {
+    margin: 1rem 0 0.5rem 0;
+}

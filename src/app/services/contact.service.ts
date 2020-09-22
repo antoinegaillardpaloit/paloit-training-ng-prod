@@ -39,7 +39,20 @@ export class ContactService {
           "name": "message",
           "value": inputData.message
         }
-      ] 
+      ],
+      "legalConsentOptions": {
+        "consent": {
+          "consentToProcess": true,
+          "text": "J'autorise l’entreprise PALO IT à stocker et traiter mes données personnelles soumises afin qu’elle me fournisse le contenu demandé.",
+          "communications": [
+            {
+              "value": inputData.consent,
+              "subscriptionTypeId": 999,
+              "text": "J'accepte de recevoir d'autres communications de PALO IT."
+            }
+          ]
+        }
+      }
     }
 
     return this.http.post(this.api, formData);

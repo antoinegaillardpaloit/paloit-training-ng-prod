@@ -51,6 +51,21 @@
                         *ngIf="!contactForm.get('message').valid && contactForm.get('message').touched"
                         class="palo-invalid">Entrez ici votre message.</span>
                 </div>
+                <small class="form-text text-muted">PALO IT s'engage à protéger et à respecter votre vie privée. Nous n'utiliserons vos
+                    données personnelles que pour administrer votre compte et vous fournir les produits et services demandés. Nous
+                    aimerions vous contacter ponctuellement au sujet de nos produits et services, ainsi que d'autres contenus
+                    susceptibles de vous intéresser. Si vous consentez à ce que nous vous contactions à cette fin, veuillez cocher la
+                    case correspondante ci-après :</small>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="consent" formControlName="consent">
+                    <label class="form-check-label" for="consent">J'accepte de recevoir d'autres communications de PALO IT.</label>
+                </div>
+                <small class="form-text text-muted">Vous pouvez vous désabonner de ces communications à tout moment. Consultez notre
+                    Politique de confidentialité pour en savoir plus sur nos modalités de désabonnement, nos politiques de
+                    confidentialité et sur notre engagement vis-à-vis de la protection et du respect de la vie privée.</small>
+                <small class="form-text text-muted">En cliquant sur « Envoyer » ci-dessous, vous autorisez l’entreprise PALO IT à
+                    stocker et traiter les données personnelles soumises ci-dessus afin qu’elle vous fournisse le contenu
+                    demandé.</small>
                 <button type="submit" class="palo-button palo-button-contact palo-button-send" [disabled]="!contactForm.valid">
                     <div class="palo-button-grid">
                         <div class="palo-button-element palo-button-element-icon-hor">
