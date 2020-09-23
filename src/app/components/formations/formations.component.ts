@@ -73,8 +73,8 @@ export class FormationsComponent implements OnInit, OnDestroy {
       
       result => {
 
-        // Attribute all formations
-        this.allformations = result.data.formations;
+        // Attribute all formations (removing formations without formateur, since the parameter cannot be set to required in Strapi)
+        this.allformations = result.data.formations.filter(formation => formation.formateurs.length > 0);
 
         // Initialize formations to display with all formations after sorting them
         this.formationsToDisplay = this.formationsService.sortFormationsByDate(this.allformations);

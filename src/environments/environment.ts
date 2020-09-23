@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://dev.palotraining-admin.com'
+  apiUrl: 'https://dev.palotraining-admin.com',
+  avatarUrl: '/uploads/Asset_29_097579daf0.png'
 };
 
 /*

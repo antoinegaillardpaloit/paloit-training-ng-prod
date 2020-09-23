@@ -23,6 +23,7 @@ export class FormationComponent implements OnInit, OnDestroy {
   private queryFormation: Subscription;
   
   apiUrl: string = environment.apiUrl;
+  avatarUrl: string = environment.avatarUrl;
 
   formationId: number;
   formation: Formation;
@@ -96,7 +97,11 @@ export class FormationComponent implements OnInit, OnDestroy {
         this.formation = result.data.formation;
         this.formateur = this.formation.formateurs[0];
         this.formationPhotoUrl = this.apiUrl + this.formation.imagedefond.url;
-        this.formateurPhotoUrl = this.apiUrl + this.formation.formateurs[0].photo.url;
+        if(this.formateur.photo) {
+          this.formateurPhotoUrl = this.apiUrl + this.formateur.photo.url;
+        } else {
+          this.formateurPhotoUrl = this.apiUrl + this.avatarUrl;
+        }   
         this.prochainesDates = this.sharedService.formatDates(this.formation.prochainessessions);
         this.domainesIntitules = this.sharedService.formatEnumeration(this.formation.domaines, "intitule", "·");
         

@@ -16,6 +16,7 @@ import { SharedService } from 'src/app/services/shared.service';
 export class CardComponent implements OnInit {
 
   apiUrl: string = environment.apiUrl;
+  avatarUrl: string = environment.avatarUrl;
 
   @Input() cardFormation: Formation;
   formateursNames: string;
@@ -28,9 +29,16 @@ export class CardComponent implements OnInit {
   constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void {
-    this.formateurPrincipal = this.cardFormation.formateurs[0];
-    this.formateurPhotoUrl = this.apiUrl + this.formateurPrincipal.photo.url;
+
     this.formateursNames = this.sharedService.formatEnumeration(this.cardFormation.formateurs, "nom", "et");
+    this.formateurPrincipal = this.cardFormation.formateurs[0];
+    
+    if(this.formateurPrincipal.photo) {
+      this.formateurPhotoUrl = this.apiUrl + this.formateurPrincipal.photo.url;
+    } else {
+      this.formateurPhotoUrl = this.apiUrl + this.avatarUrl;
+    }    
+
     this.domainesIntitules = this.sharedService.formatEnumeration(this.cardFormation.domaines, "intitule", "·");
     this.prochainesDates = this.sharedService.formatDates(this.cardFormation.prochainessessions);
     this.lieu = this.cardFormation.lieus;
