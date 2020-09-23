@@ -14,12 +14,18 @@ export class FormateurComponent implements OnInit {
   orientationClass: string = '';
 
   apiUrl: string = environment.apiUrl;
+  avatarUrl: string = environment.avatarUrl;
   photoUrl: string;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.photoUrl = this.apiUrl + this.formateur.photo.url;
+    
+    if (this.formateur.photo) {
+      this.photoUrl = this.apiUrl + this.formateur.photo.url;
+    } else {
+      this.photoUrl = this.apiUrl + this.avatarUrl;
+    }
     this.orientationClass = this.orientationIndex%2 === 0 ? 'palo-formateur-left' : 'palo-formateur-right';
   }
 }
