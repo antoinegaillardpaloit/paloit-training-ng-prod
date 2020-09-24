@@ -25,6 +25,7 @@ import { PaloFooterComponent } from './components/palo-footer/palo-footer.compon
 import { MentionsComponent } from './components/mentions/mentions.component';
 import { ConfidentialiteComponent } from './components/confidentialite/confidentialite.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
     PaloFooterComponent,
     MentionsComponent,
     ConfidentialiteComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    PageNotFoundComponent
   ],
   imports: [
     MarkdownModule.forRoot(),

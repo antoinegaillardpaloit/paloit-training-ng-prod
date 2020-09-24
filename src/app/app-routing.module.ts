@@ -10,6 +10,7 @@ import { ModalitesComponent } from './components/modalites/modalites.component';
 import { MentionsComponent } from './components/mentions/mentions.component';
 import { ConfidentialiteComponent } from './components/confidentialite/confidentialite.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', component: AccueilComponent },
@@ -19,7 +20,9 @@ const routes: Routes = [
   { path: "modalites", component: ModalitesComponent },
   { path: "mentions-legales", component: MentionsComponent },
   { path: "contact", component: ContactFormComponent },
-  { path: "politique-de-confidentialite", component: ConfidentialiteComponent }
+  { path: "politique-de-confidentialite", component: ConfidentialiteComponent },
+  { path: "not-found", component: PageNotFoundComponent },
+  { path: "**", redirectTo: "/not-found" }
 ];
 
 @NgModule({
