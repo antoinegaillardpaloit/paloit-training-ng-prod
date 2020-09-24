@@ -4,12 +4,18 @@ import { Apollo } from "apollo-angular";
 import MODALITES_QUERY from "../../apollo/queries/modalites/modalites";
 import { Subscription } from "rxjs";
 
+import { environment } from 'src/environments/environment';
+
 @Component({
   selector: 'app-modalites',
   templateUrl: './modalites.component.html',
   styleUrls: ['./modalites.component.css']
 })
 export class ModalitesComponent implements OnInit, OnDestroy {
+
+  apiUrl: string = environment.apiUrl;
+
+  photoUrl: string = this.apiUrl + "/uploads/modalites2_ee9d497594.jpg";
 
   data: any = {};
   loading = true;
