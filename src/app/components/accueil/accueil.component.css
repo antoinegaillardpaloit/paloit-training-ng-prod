@@ -29,9 +29,13 @@ div.palo-accueil-row {
     margin-top: 1rem;
 }
 
+.palo-accueil-cell img {
+    width: 100%;
+}
+
 /** Circular but responsive photo **/
 
-.palo-accueil-photo-container {
+/* .palo-accueil-photo-container {
     width: 75%;
     margin: 0 auto;
 }
@@ -52,7 +56,7 @@ div.palo-accueil-row {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
+} */
 
 @media (min-width: 768px) {
 
