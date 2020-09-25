@@ -9,8 +9,8 @@ h1,
 
 p#palo-accueil-chapeau-content,
 #palo-accueil-signature p {
-    font-size: 1.25rem;
-    line-height: 27px;
+    font-size: 1.2rem;
+    line-height: 24px;
     font-weight: 500;
 }
 
@@ -54,28 +54,6 @@ div.palo-accueil-row {
     object-fit: cover;
 }
 
-/** Responsive P **/
-
-/* div#palo-accueil-signature {
-    position: relative;
-}
-
-#palo-accueil-signature p {
-    z-index: 2;
-}
-
-div#palo-accueil-signature-letter {
-    display: none;
-    background-image: url("https://dev.palotraining-admin.com/uploads/palo_orange_bb2e792835.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 25%;
-    left: -5%;
-    width: 35%;
-    height: 35%;
-} */
-
 @media (min-width: 768px) {
 
     h1,
@@ -84,8 +62,8 @@ div#palo-accueil-signature-letter {
     }
 
     div.palo-accueil-row {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
     }
 
     div#palo-accueil-signature-letter {

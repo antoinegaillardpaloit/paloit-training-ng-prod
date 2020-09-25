@@ -189,7 +189,7 @@ div.palo-sections {
 }
 
 .palo-button-arrow:before {
-  content: "\e00d";
+  content: "\ea3c";
   font-family: 'icomoon';
 	speak: none;
 	text-transform: none;
@@ -202,6 +202,11 @@ div.palo-sections {
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
+}
+
+.palo-button-newtab:before {
+  content: "\ea3b";
+  font-weight: 400;
 }
 
 .palo-button-arrow:hover:before {
