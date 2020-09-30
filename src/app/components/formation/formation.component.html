@@ -61,7 +61,8 @@
                     <img src="{{formateurPhotoUrl}}" alt="Photo de {{formateur?.nom}}, le formateur"
                         class="palo-avatar-round palo-formation-avatar">
 
-                    <h3>Le formateur</h3>
+                    <h3 *ngIf="formateur?.nom === 'Amandine François'; else elseBlock">La formatrice</h3>
+                    <ng-template #elseBlock><h3>Le formateur</h3></ng-template>
 
                     <p>{{ formateur?.bio }}</p>
 
