@@ -314,7 +314,8 @@ div.palo-button-element {
 
 img.palo-avatar-round {
     border-radius: 50%;
-    max-width: 130px;
+    object-fit: cover;
+    max-width: 168px;
 }
 
 
