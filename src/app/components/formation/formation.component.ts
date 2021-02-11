@@ -11,6 +11,8 @@ import { SharedService } from 'src/app/services/shared.service';
 import { Formation } from 'src/app/models/formation.model';
 import { Formateur } from 'src/app/models/formateur.model';
 
+import * as constants from 'src/app/constants/constants';
+
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
@@ -78,14 +80,14 @@ export class FormationComponent implements OnInit, OnDestroy {
 
   sinscrire() {
     window.open(
-      "mailto:palotraining@palo-it.com?subject=Inscription à la formation " + this.formation.intitule,
+      `mailto:${constants.emailRegistration}?subject=Inscription à la formation ` + this.formation.intitule,
       "_blank"
     );
   }
 
   contact() {
     window.open(
-      "mailto:palotraining@palo-it.com?subject=Concernant la formation " + this.formation.intitule,
+      `mailto:${constants.emailRegistration}?subject=Concernant la formation ` + this.formation.intitule,
       "_blank"
     );
   }

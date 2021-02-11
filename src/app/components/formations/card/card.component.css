@@ -70,16 +70,24 @@ div.palo-card-content {
 div.palo-card-avatar-container {
     align-self: center;
     padding: 0;
+    text-align: center;
 }
 
 img.palo-card-avatar {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 72px;
+    height: 72px;
     image-rendering: -moz-crisp-edges;
     image-rendering: -o-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
+}
+
+@media (min-width: 450px) {
+    
+    img.palo-card-avatar {
+        width: 88px;
+        height: 88px;
+    }
 }
 
 div.palo-card-info {
@@ -89,6 +97,11 @@ div.palo-card-info {
 
 
 @media (min-width: 768px) {
+
+    img.palo-card-avatar {
+        width: 72px;
+        height: 72px;
+    }
 
     div.palo-card-header {
         min-height: 11em;
@@ -100,6 +113,11 @@ div.palo-card-info {
 }
 
 @media (min-width: 1200px) {
+
+    img.palo-card-avatar {
+        width: 82px;
+        height: 82px;
+    }
 
     div.palo-card-header {
         min-height: 10em;

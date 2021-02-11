@@ -60,7 +60,8 @@ a.collapsed + svg {
 }
 
 .palo-formation-avatar {
-    width: 50%;
+    width: 112px;
+    height: 112px;
 }
 
 .palo-formation-formateur h3,

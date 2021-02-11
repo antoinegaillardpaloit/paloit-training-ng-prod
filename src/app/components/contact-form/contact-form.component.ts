@@ -5,6 +5,8 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { ContactService } from 'src/app/services/contact.service';
 import { environment } from 'src/environments/environment';
 
+import * as constants from 'src/app/constants/constants';
+
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
@@ -24,7 +26,7 @@ export class ContactFormComponent implements OnInit {
   okMessage = "Merci, votre formulaire a bien été transmis. Nous y répondrons dans les plus brefs délais."
 
   errorResponse: boolean;
-  errorMessage = "Désolé, votre formulaire n'a pu être transmis. Veuillez réessayer ultérieurement ou nous contacter directement à palotraining@palo-it.com.";
+  errorMessage = `Désolé, votre formulaire n'a pu être transmis. Veuillez réessayer ultérieurement ou nous contacter directement à ${constants.emailRegistration}.`;
 
   ngOnInit(): void {
 
